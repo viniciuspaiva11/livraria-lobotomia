@@ -1,0 +1,16 @@
+{
+    "redirects": [
+          {
+                  "source": "/",
+                  "has": [{"type": "host", "value": "xpassarinho.com.br"}],
+                  "destination": "https://www.livrarialobotomia.com.br/xpassarinho",
+                  "permanent": true
+          },
+          {
+                  "source": "/",
+                  "has": [{"type": "host", "value": "www.xpassarinho.com.br"}],
+                  "destination": "https://www.livrarialobotomia.com.br/xpassarinho",
+                  "permanent": true
+          }
+    ]
+}
