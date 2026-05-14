@@ -253,6 +253,28 @@
       footer{flex-direction:column;gap:8px;text-align:center;}
       .em-breve-box{flex-direction:column;text-align:center;}
     }
+
+    .livro-botoes{display:flex;gap:10px;margin-top:14px;}
+    .btn-saiba{
+      flex:1;padding:10px 0;
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+      color:var(--preto);background:transparent;
+      border:1px solid var(--cinza-claro);border-radius:2px;
+      text-align:center;text-decoration:none;
+      transition:border-color 0.2s,background 0.2s;
+    }
+    .btn-saiba:hover{border-color:var(--cinza);background:rgba(0,0,0,0.03);}
+    .btn-comprar{
+      flex:1;padding:10px 0;
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+      color:#fff;background:var(--dourado);
+      border:1px solid var(--dourado);border-radius:2px;
+      text-align:center;text-decoration:none;
+      transition:background 0.2s,opacity 0.2s;
+    }
+    .btn-comprar:hover{opacity:0.88;}
   </style>
 </head>
 <body>
@@ -334,19 +356,27 @@
         <div class="secao-linha"></div>
       </div>
       <div class="livros-grid">
-        <a href="/xpassarinho" class="livro-card">
-          <img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="livro-capa"/>
+        <div class="livro-card">
+          <a href="/xpassarinho">
+            <img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="livro-capa"/>
+          </a>
           <div class="livro-info">
             <span class="livro-tag">Lançamento</span>
-            <h3 class="livro-titulo">X-Passarinho</h3>
+            <a href="/xpassarinho" style="text-decoration:none;">
+              <h3 class="livro-titulo">X-Passarinho</h3>
+            </a>
             <p class="livro-autor">Bouquard Lobo</p>
             <p class="livro-resumo">Como monetizar no X apesar do X. O único guia honesto sobre o algoritmo, as punições e o que realmente funciona.</p>
-            <div>
+            <div style="margin-bottom:4px;">
               <span class="livro-preco-riscado">R$ 67</span>
               <span class="livro-preco">R$ 47</span>
             </div>
+            <div class="livro-botoes">
+              <a href="/xpassarinho" class="btn-saiba">Saiba mais</a>
+              <a href="https://hotmart.com/pt-br/marketplace/produtos/x-passarinho-o-guia-definitivo-para-monetizar-no-x-ex-twitter/A103241824K" target="_blank" class="btn-comprar" onclick="gtag('event','click_comprar_livraria',{'event_category':'botao','event_label':'xpassarinho'})">Comprar</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
     </section>
 
