@@ -274,7 +274,7 @@
       aside.anunciantes { display:none; }
 
       /* Barra topo menor */
-      .barra-topo { padding:8px 0; }
+      .barra-topo { padding:8px 0; padding-left:52px; }
       .ads-topo { width:100%; height:60px; border-left:none; border-right:none; border-radius:0; }
 
       /* Layout linear */
@@ -386,6 +386,24 @@
     .menu-mobile-overlay .nav-footer {
       padding:20px 28px;
     }
+
+    .ads-mobile {
+      display:none;
+      width:100%;
+      background:rgba(136,135,128,0.04);
+      border:1px dashed var(--cinza-claro);
+      border-radius:3px;
+      padding:12px;
+      text-align:center;
+      margin:0 0 8px;
+    }
+    .ads-mobile span {
+      font-family:'Barlow Condensed',sans-serif;
+      font-size:12px;letter-spacing:2px;color:var(--cinza);text-transform:uppercase;
+    }
+    @media(max-width:900px){
+      .ads-mobile { display:block; }
+    }
   </style>
 </head>
 <body>
@@ -493,6 +511,13 @@
       </div>
     </section>
 
+    <div class="ads-mobile">
+      <span>Portal Audiências — inteligência esportiva</span>
+      <div style="margin-top:8px;">
+        <a href="https://audiencias.com.br" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;color:var(--dourado);text-decoration:none;text-transform:uppercase;">audiencias.com.br →</a>
+      </div>
+    </div>
+
     <section class="secao" id="livros">
       <div class="secao-header">
         <h2 class="secao-titulo">Livros Autorais</h2>
@@ -522,6 +547,13 @@
         </div>
       </div>
     </section>
+
+    <div class="ads-mobile">
+      <span>Anuncie aqui</span>
+      <div style="margin-top:6px;">
+        <a href="mailto:falecomlobo@proton.me?subject=Anuncio na Livraria Lobotomia" style="font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--cinza);text-decoration:none;">falecomlobo@proton.me</a>
+      </div>
+    </div>
 
     <section class="secao" id="malditos">
       <div class="secao-header">
