@@ -266,6 +266,39 @@
     }
     .btn-comprar:hover{opacity:0.88;}
 
+    /* Menu mobile - oculto no desktop */
+    .menu-mobile-btn {
+      display:none;
+      position:fixed; top:12px; left:12px; z-index:200;
+      background:var(--bg); border:0.5px solid var(--cinza-claro);
+      border-radius:4px; padding:8px 10px; cursor:pointer;
+      flex-direction:column; gap:4px; align-items:center;
+    }
+    .menu-mobile-btn span {
+      display:block; width:22px; height:2px;
+      background:var(--preto); border-radius:1px;
+      transition:all 0.2s;
+    }
+    .menu-mobile-overlay {
+      position:fixed; inset:0; z-index:150;
+      background:var(--bg);
+      flex-direction:column;
+      padding:64px 0 32px;
+      overflow-y:auto;
+    }
+    .menu-mobile-overlay .nav-links a {
+      font-size:18px; padding:16px 28px;
+    }
+    .menu-mobile-overlay .nav-logo {
+      padding:0 28px 24px;
+    }
+    .menu-mobile-overlay .nav-logo img {
+      max-width:120px;
+    }
+    .menu-mobile-overlay .nav-footer {
+      padding:20px 28px;
+    }
+
     /* MOBILE */
     @media(max-width:900px){
 
@@ -339,7 +372,7 @@
 
       /* Menu mobile hamburguer */
       .menu-mobile-btn {
-        display:flex !important;
+        display:flex;
       }
       .menu-mobile-overlay {
         display:none;
@@ -352,39 +385,6 @@
     @media(max-width:480px){
       .livros-grid { grid-template-columns:1fr; }
       .hero-titulo { font-size:2rem; }
-    }
-
-    /* Menu mobile - oculto no desktop */
-    .menu-mobile-btn {
-      display:none;
-      position:fixed; top:12px; left:12px; z-index:200;
-      background:var(--bg); border:0.5px solid var(--cinza-claro);
-      border-radius:4px; padding:8px 10px; cursor:pointer;
-      flex-direction:column; gap:4px; align-items:center;
-    }
-    .menu-mobile-btn span {
-      display:block; width:22px; height:2px;
-      background:var(--preto); border-radius:1px;
-      transition:all 0.2s;
-    }
-    .menu-mobile-overlay {
-      position:fixed; inset:0; z-index:150;
-      background:var(--bg);
-      flex-direction:column;
-      padding:64px 0 32px;
-      overflow-y:auto;
-    }
-    .menu-mobile-overlay .nav-links a {
-      font-size:18px; padding:16px 28px;
-    }
-    .menu-mobile-overlay .nav-logo {
-      padding:0 28px 24px;
-    }
-    .menu-mobile-overlay .nav-logo img {
-      max-width:120px;
-    }
-    .menu-mobile-overlay .nav-footer {
-      padding:20px 28px;
     }
 
     .ads-mobile {
