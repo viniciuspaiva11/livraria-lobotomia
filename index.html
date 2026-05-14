@@ -38,7 +38,6 @@
     html{font-size:18px;}
     body{background:var(--bg);color:var(--texto);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
 
-    /* BARRA TOPO ADS */
     .barra-topo{
       width:100%;background:var(--bg);
       border-bottom:0.5px solid var(--cinza-claro);
@@ -57,10 +56,8 @@
       font-size:14px;letter-spacing:2px;color:var(--cinza);text-transform:uppercase;
     }
 
-    /* LAYOUT */
     .layout{display:flex;min-height:calc(100vh - 122px);}
 
-    /* NAV LATERAL */
     nav.sidebar{
       width:var(--nav-w);min-width:var(--nav-w);
       background:var(--bg);
@@ -79,7 +76,7 @@
       font-size:15px;letter-spacing:1.5px;text-transform:uppercase;
       color:var(--cinza);text-decoration:none;
       border-left:2px solid transparent;
-      transition:all 0.2s;white-space:nowrap;
+      transition:all 0.2s;
     }
     .nav-links a:hover,.nav-links a.ativo{
       color:var(--preto);border-left-color:var(--dourado);
@@ -91,55 +88,66 @@
     .nav-footer a:hover{opacity:1;}
     .nav-footer svg{width:20px;height:20px;}
 
-    /* CONTEUDO */
     main.conteudo{flex:1;min-width:0;padding:0 40px 60px;}
 
-    /* HERO — compacto */
+    /* HERO COM VIDEO */
     .hero{
-      display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;
-      padding:48px 0 40px;
+      padding:52px 0 44px;
       border-bottom:0.5px solid var(--cinza-claro);
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:48px;
+      align-items:center;
     }
-    .hero-logo-wrap img{width:200px;height:200px;object-fit:contain;display:block;}
+    .hero-video-wrap{
+      position:relative;
+      width:280px;height:280px;
+      border-radius:4px;
+      overflow:hidden;
+      background:#1a1a18;
+    }
+    .hero-video-wrap video{
+      width:100%;height:100%;
+      object-fit:cover;
+      display:block;
+    }
     .hero-titulo{
       font-family:'Playfair Display',serif;
-      font-size:3rem;font-weight:900;font-style:italic;
-      color:var(--preto);letter-spacing:-1px;line-height:1;
-      margin-bottom:10px;
+      font-size:3.4rem;font-weight:900;font-style:italic;
+      color:var(--preto);letter-spacing:-1px;line-height:0.95;
+      margin-bottom:14px;
     }
-    .hero-linha{width:48px;height:1px;background:var(--dourado);margin:12px 0;}
+    .hero-linha{width:52px;height:1px;background:var(--dourado);margin:16px 0;}
     .hero-slogan{
       font-family:'Barlow Condensed',sans-serif;
       font-size:0.9rem;font-weight:400;
-      color:var(--cinza);letter-spacing:3px;text-transform:uppercase;
-      margin-bottom:16px;
+      color:var(--cinza);letter-spacing:4px;text-transform:uppercase;
+      margin-bottom:20px;
     }
     .hero-desc{
-      font-size:0.95rem;color:var(--cinza);line-height:1.6;
-      max-width:420px;
+      font-size:1rem;color:var(--cinza);line-height:1.65;
+      max-width:460px;
     }
 
-    /* SECOES */
-    .secao{padding:44px 0;border-bottom:0.5px solid var(--cinza-claro);}
+    .secao{padding:48px 0;border-bottom:0.5px solid var(--cinza-claro);}
     .secao:last-child{border-bottom:none;}
-    .secao-header{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;}
+    .secao-header{display:flex;align-items:baseline;gap:16px;margin-bottom:32px;}
     .secao-titulo{
       font-family:'Playfair Display',serif;
-      font-size:1.4rem;font-weight:700;font-style:italic;
+      font-size:1.5rem;font-weight:700;font-style:italic;
       color:var(--preto);white-space:nowrap;
     }
     .secao-linha{flex:1;height:0.5px;background:var(--cinza-claro);}
 
-    /* LIVROS */
     .livros-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,260px));gap:24px;}
     .livro-card{
       border:0.5px solid var(--cinza-claro);border-radius:3px;overflow:hidden;
       transition:border-color 0.2s,transform 0.2s;
       text-decoration:none;color:inherit;display:block;
     }
-    .livro-card:hover{border-color:var(--dourado);transform:translateY(-2px);}
+    .livro-card:hover{border-color:var(--dourado);transform:translateY(-3px);}
     .livro-capa{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;}
-    .livro-info{padding:16px;}
+    .livro-info{padding:18px;}
     .livro-tag{
       display:inline-block;
       font-family:'Barlow Condensed',sans-serif;
@@ -152,25 +160,23 @@
       font-size:1.05rem;font-weight:700;color:var(--preto);
       margin-bottom:4px;line-height:1.3;
     }
-    .livro-autor{font-size:0.85rem;color:var(--cinza);margin-bottom:8px;}
-    .livro-resumo{font-size:0.85rem;color:var(--texto);line-height:1.6;margin-bottom:12px;}
+    .livro-autor{font-size:0.85rem;color:var(--cinza);margin-bottom:8px;font-style:italic;}
+    .livro-resumo{font-size:0.85rem;color:var(--texto);line-height:1.6;margin-bottom:14px;}
     .livro-preco{
       font-family:'Barlow Condensed',sans-serif;
       font-size:1.2rem;font-weight:600;color:var(--preto);letter-spacing:1px;
     }
-    .livro-preco-riscado{font-size:0.8rem;color:var(--cinza);text-decoration:line-through;margin-right:6px;}
+    .livro-preco-riscado{font-size:0.85rem;color:var(--cinza);text-decoration:line-through;margin-right:6px;}
 
-    /* EM BREVE */
     .em-breve-box{
       border:0.5px dashed var(--cinza-claro);border-radius:3px;
-      padding:40px 32px;cursor:pointer;transition:border-color 0.2s;
-      display:grid;grid-template-columns:1fr auto;
-      align-items:center;gap:24px;
+      padding:40px 36px;cursor:pointer;transition:border-color 0.2s;
+      display:flex;align-items:center;justify-content:space-between;gap:32px;
     }
     .em-breve-box:hover{border-color:var(--dourado);}
     .em-breve-titulo{
       font-family:'Playfair Display',serif;
-      font-size:1.05rem;font-weight:700;font-style:italic;
+      font-size:1.1rem;font-weight:700;font-style:italic;
       color:var(--preto);margin-bottom:6px;
     }
     .em-breve-sub{font-size:0.85rem;color:var(--cinza);line-height:1.5;}
@@ -178,10 +184,9 @@
       font-family:'Barlow Condensed',sans-serif;font-size:12px;
       letter-spacing:2px;text-transform:uppercase;
       border:0.5px solid var(--cinza-claro);color:var(--cinza);
-      padding:6px 16px;border-radius:2px;white-space:nowrap;
+      padding:8px 20px;border-radius:2px;white-space:nowrap;flex-shrink:0;
     }
 
-    /* SOBRE NOS */
     .sobre-texto{
       font-family:'DM Sans',sans-serif;
       font-size:1rem;font-weight:300;
@@ -191,11 +196,10 @@
     .sobre-texto p{margin-bottom:1.4em;}
     .sobre-texto p:last-child{margin-bottom:0;}
 
-    /* CONTATO */
-    .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:500px;}
+    .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:520px;}
     .contato-item{
       display:flex;align-items:center;gap:14px;
-      padding:18px 20px;border:0.5px solid var(--cinza-claro);border-radius:3px;
+      padding:20px;border:0.5px solid var(--cinza-claro);border-radius:3px;
       text-decoration:none;color:var(--texto);transition:border-color 0.2s;
     }
     .contato-item:hover{border-color:var(--dourado);}
@@ -203,13 +207,12 @@
     .contato-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);display:block;}
     .contato-valor{font-size:0.9rem;color:var(--preto);}
 
-    /* BARRA LATERAL ADS */
     aside.anunciantes{
       width:var(--side-w);min-width:var(--side-w);
       border-left:0.5px solid var(--cinza-claro);
       position:sticky;top:122px;height:calc(100vh - 122px);
-      padding:24px 14px;
-      display:flex;flex-direction:column;gap:16px;
+      padding:24px 16px;
+      display:flex;flex-direction:column;gap:20px;
       overflow-y:auto;
     }
     .side-label{
@@ -220,20 +223,19 @@
     .banner-slot{
       border:1px solid var(--cinza-claro);border-radius:3px;
       display:flex;flex-direction:column;align-items:center;
-      justify-content:center;padding:20px 12px;gap:10px;
+      justify-content:center;padding:24px 12px;gap:12px;
       text-decoration:none;color:inherit;
-      transition:border-color 0.2s;min-height:200px;
+      transition:border-color 0.2s;min-height:220px;
     }
     .banner-slot:hover{border-color:var(--dourado);}
     .banner-slot.dashed{border-style:dashed;}
     .banner-nome{
       font-family:'Barlow Condensed',sans-serif;
-      font-size:14px;letter-spacing:1px;text-transform:uppercase;
+      font-size:15px;letter-spacing:1px;text-transform:uppercase;
       color:var(--preto);text-align:center;line-height:1.3;font-weight:600;
     }
-    .banner-sub{font-size:12px;color:var(--cinza);text-align:center;line-height:1.4;}
+    .banner-sub{font-size:12px;color:var(--cinza);text-align:center;line-height:1.5;}
 
-    /* FOOTER */
     footer{
       padding:22px 40px;border-top:0.5px solid var(--cinza-claro);
       display:flex;align-items:center;justify-content:space-between;
@@ -245,12 +247,12 @@
       nav.sidebar,.anunciantes{display:none;}
       main.conteudo{padding:0 20px 40px;}
       .hero{grid-template-columns:1fr;text-align:center;}
-      .hero-logo-wrap img{margin:0 auto;}
-      .hero-linha{margin:12px auto;}
+      .hero-video-wrap{margin:0 auto;}
+      .hero-linha{margin:16px auto;}
       .livros-grid{grid-template-columns:repeat(2,1fr);}
       .contato-grid{grid-template-columns:1fr;}
       footer{flex-direction:column;gap:8px;text-align:center;}
-      .em-breve-box{grid-template-columns:1fr;text-align:center;}
+      .em-breve-box{flex-direction:column;text-align:center;}
     }
   </style>
 </head>
@@ -307,8 +309,11 @@
   <main class="conteudo">
 
     <section class="hero" id="inicio">
-      <div class="hero-logo-wrap">
-        <img src="/lobotomia.png" alt="Livraria Lobotomia"/>
+      <div class="hero-video-wrap">
+        <video autoplay muted loop playsinline>
+          <source src="/animacao.mp4" type="video/mp4"/>
+          <img src="/lobotomia.png" alt="Livraria Lobotomia"/>
+        </video>
       </div>
       <div>
         <h1 class="hero-titulo">Livraria<br>Lobotomia</h1>
@@ -325,11 +330,11 @@
       </div>
       <div class="livros-grid">
         <a href="/xpassarinho" class="livro-card">
-          <img src="/xpassarinho/capa.jpg" alt="X-Passarinho" class="livro-capa"/>
+          <img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="livro-capa"/>
           <div class="livro-info">
             <span class="livro-tag">Lançamento</span>
             <h3 class="livro-titulo">X-Passarinho</h3>
-            <p class="livro-autor">Vinícius Lobo</p>
+            <p class="livro-autor">Bouquard Lobo</p>
             <p class="livro-resumo">Como monetizar no X apesar do X. O único guia honesto sobre o algoritmo, as punições e o que realmente funciona.</p>
             <div>
               <span class="livro-preco-riscado">R$ 67</span>
@@ -411,7 +416,7 @@
     <div>
       <p class="side-label">Parceiros</p>
       <a href="https://audiencias.com.br" target="_blank" class="banner-slot">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:32px;height:32px;color:#C9A86C;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:34px;height:34px;color:#C9A86C;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
         <span class="banner-nome">Portal<br>Audiências</span>
         <span class="banner-sub">Inteligência esportiva</span>
       </a>
