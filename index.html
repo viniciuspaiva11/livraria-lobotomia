@@ -210,10 +210,9 @@
     aside.anunciantes{
       width:var(--side-w);min-width:var(--side-w);
       border-left:0.5px solid var(--cinza-claro);
-      position:sticky;top:159px;height:calc(100vh - 159px);
+      position:sticky;top:159px;height:auto;
       padding:24px 16px;
       display:flex;flex-direction:column;gap:20px;
-      overflow-y:auto;
     }
     .side-label{
       font-family:'Barlow Condensed',sans-serif;
@@ -222,19 +221,19 @@
     }
     .banner-slot{
       border:1px solid var(--cinza-claro);border-radius:3px;
-      display:flex;flex-direction:column;align-items:center;
-      justify-content:center;padding:24px 12px;gap:12px;
+      display:flex;flex-direction:row;align-items:center;
+      justify-content:flex-start;padding:16px 20px;gap:16px;
       text-decoration:none;color:inherit;
-      transition:border-color 0.2s;min-height:440px;
+      transition:border-color 0.2s;height:120px;width:100%;
     }
     .banner-slot:hover{border-color:var(--dourado);}
     .banner-slot.dashed{border-style:dashed;}
     .banner-nome{
       font-family:'Barlow Condensed',sans-serif;
       font-size:15px;letter-spacing:1px;text-transform:uppercase;
-      color:var(--preto);text-align:center;line-height:1.3;font-weight:600;
+      color:var(--preto);text-align:left;line-height:1.3;font-weight:600;
     }
-    .banner-sub{font-size:12px;color:var(--cinza);text-align:center;line-height:1.5;}
+    .banner-sub{font-size:12px;color:var(--cinza);text-align:left;line-height:1.5;}
 
     footer{
       padding:22px 40px;border-top:0.5px solid var(--cinza-claro);
