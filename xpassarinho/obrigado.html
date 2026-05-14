@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado pela sua compra — X-Passarinho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF2H6X0RD1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JF2H6X0RD1');
+
+    // Evento de compra — dispara conversao no Google Ads via GA4
+    const params = new URLSearchParams(window.location.search);
+    gtag('event', 'purchase', {
+      transaction_id: params.get('pedido') || 'unknown',
+      value: parseFloat(params.get('valor')) || 47.00,
+      currency: 'BRL',
+      items: [{
+        item_id: 'xpassarinho',
+        item_name: 'X-Passarinho',
+        price: 47.00,
+        quantity: 1
+      }]
+    });
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a08;
+      color: #f0ede6;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .container { max-width: 600px; }
+    .check {
+      font-size: 64px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #C9A86C;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 18px;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .destaque {
+      color: #f0ede6;
+      font-weight: 500;
+    }
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #C9A86C;
+      margin: 32px auto;
+    }
+    .instrucao {
+      font-size: 15px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="check">✓</div>
+    <h1>Compra confirmada</h1>
+    <p class="destaque">Seu acesso ao X-Passarinho está a caminho.</p>
+    <p>Verifique sua caixa de entrada — o link de acesso foi enviado pelo Hotmart para o e-mail cadastrado.</p>
+    <div class="divider"></div>
+    <p class="instrucao">Não encontrou? Confira a pasta de spam ou promoções.</p>
+  </div>
+</body>
+</html>
