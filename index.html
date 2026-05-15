@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- deploy 1778876475496 -->
+<!-- STABLE: 2751e01 — mobile MVP aprovado 2026-05-15 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8"/>
@@ -112,7 +113,12 @@
       .ver-todos-logo{width:100%;height:100%;object-fit:contain;}
       .ver-todos-info{padding:12px;}
       .ver-todos-label{display:block;padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--dourado);border:none;text-align:center;}
-      @media(max-width:900px){
+      /* ====================================================
+     MOBILE ONLY (max-width:900px)
+     Regras aqui SOBRESCREVEM desktop.
+     Para desktop: usar @media(min-width:901px) FORA deste bloco.
+     ==================================================== */
+    @media(max-width:900px){
       .menu-mobile-btn{top:14px;}.hero-slogan-row{display:flex;align-items:center;justify-content:center;gap:12px;}.hero-slogan-row .menu-mobile-btn{position:static;display:flex;}
       nav.sidebar{display:none;}
       aside.anunciantes{display:none;}
@@ -177,7 +183,8 @@
       .carrossel-dot{width:6px;height:6px;border-radius:50%;background:var(--cinza-claro);transition:background 0.2s;}
       .carrossel-dot.ativo{background:var(--dourado);}
     }
-@media(max-width:480px){
+/* MOBILE PEQUENO (max-width:480px) */
+    @media(max-width:480px){
       .livros-grid{grid-template-columns:1fr;}
       .hero-titulo{font-size:1.9rem;}
     }
