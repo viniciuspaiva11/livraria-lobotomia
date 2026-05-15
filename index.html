@@ -50,7 +50,7 @@
     .hero-video-wrap video{width:100%;height:100%;object-fit:cover;display:block;}
     .hero-titulo{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;font-style:italic;color:var(--preto);letter-spacing:-1px;line-height:0.95;margin-bottom:14px;}
     .hero-linha{width:52px;height:1px;background:var(--dourado);margin:16px 0;}
-    .hero-slogan{font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:400;color:var(--cinza);letter-spacing:4px;text-transform:uppercase;margin-bottom:20px;}
+    .hero-slogan{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;color:var(--cinza);letter-spacing:4px;text-transform:uppercase;margin-bottom:20px;}
     .hero-desc{font-size:1rem;color:var(--cinza);line-height:1.65;max-width:460px;}
     .secao{padding:48px 0;border-bottom:0.5px solid var(--cinza-claro);}
     .secao:last-child{border-bottom:none;}
@@ -113,7 +113,7 @@
       .ver-todos-info{padding:12px;}
       .ver-todos-label{display:block;padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--dourado);border:none;text-align:center;}
       @media(max-width:900px){
-      .menu-mobile-btn{top:14px;}
+      .menu-mobile-btn{top:14px;}.hero-slogan-row{display:flex;align-items:center;gap:12px;}.hero-slogan-row .menu-mobile-btn{position:static;display:flex;}
       nav.sidebar{display:none;}
       aside.anunciantes{display:none;}
       .barra-topo{padding:10px 0 10px 52px;}
@@ -130,7 +130,7 @@
       .secao-titulo{font-size:1.2rem;white-space:normal;}
       .livros-grid{grid-template-columns:repeat(2,1fr);gap:12px;}.livro-card--destaque{grid-column:1/-1;width:70%;margin:0 auto;}
       .livro-info{padding:12px;}
-      .livro-resumo{display:none;}
+      .livro-resumo{display:none;}.livro-card--destaque .livro-resumo{display:block;}
       .livro-botoes{flex-direction:column;gap:6px;}
       .btn-saiba,.btn-comprar{padding:9px;font-size:13px;}
       .em-breve-box{flex-direction:column;text-align:center;padding:24px 16px;gap:14px;align-items:center;}
@@ -232,7 +232,7 @@
     <section class="hero" id="inicio">
       <div class="hero-video-wrap"><video autoplay muted loop playsinline><source src="/animacao.mp4" type="video/mp4"/><img src="/lobotomia.png" alt="Livraria Lobotomia"/></video></div>
       <div>
-        <p class="hero-slogan">Reflexão e Desconforto</p>
+        <div class="hero-slogan-row"><button class="menu-mobile-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button><p class="hero-slogan">Reflexão e Desconforto</p></div>
         <p class="hero-desc">Selo editorial de livros que incomodam e esclarecem.</p>
       </div>
     </section>
