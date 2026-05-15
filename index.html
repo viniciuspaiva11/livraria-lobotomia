@@ -106,11 +106,12 @@
     .menu-mobile-overlay .nav-footer{padding:20px 28px;}
     .menu-mobile-overlay.aberto{display:flex;}
     /* Card Veja Todos */
-      .livro-card--ver-todos{display:flex;align-items:center;justify-content:center;background:var(--cinza-claro);border:2px dashed var(--dourado);border-radius:4px;text-decoration:none;transition:background 0.2s;}
+      .livro-card--ver-todos{display:flex;flex-direction:column;border:1.5px dashed var(--dourado);border-radius:4px;text-decoration:none;background:var(--cinza-claro);transition:background 0.2s;overflow:hidden;}
       .livro-card--ver-todos:hover{background:#ede8df;}
-      .ver-todos-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;}
-      .ver-todos-icone{font-size:2rem;color:var(--dourado);line-height:1;}
-      .ver-todos-texto{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);}
+      .ver-todos-capa{aspect-ratio:2/3;width:100%;background:#e8e4dc;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--dourado);flex-shrink:0;}
+      .ver-todos-info{padding:12px;display:flex;flex-direction:column;gap:4px;}
+      .ver-todos-label{font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);}
+      .ver-todos-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;color:#aaa;}
       @media(max-width:900px){
       .menu-mobile-btn{top:72px;}
       nav.sidebar{display:none;}
@@ -374,9 +375,10 @@
         </div>
 
         <a href="/parceiros" class="livro-card livro-card--ver-todos">
-          <div class="ver-todos-inner">
-            <span class="ver-todos-icone">→</span>
-            <span class="ver-todos-texto">Veja Todos</span>
+          <div class="ver-todos-capa">→</div>
+          <div class="ver-todos-info">
+            <span class="ver-todos-label">Ver todos</span>
+            <span class="ver-todos-sub">os parceiros</span>
           </div>
         </a>
       </div>
