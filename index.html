@@ -122,13 +122,13 @@
       .layout{display:block;}
       main.conteudo{padding:0 16px 48px;}
       .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 0 28px;gap:24px;}
-      .hero-video-wrap{width:220px;height:220px;}
+      .hero-video-wrap{width:85vw;height:85vw;}
       .hero-titulo{font-size:2.2rem;letter-spacing:-0.5px;}
       .hero-linha{margin:10px auto;}
       .hero-desc{max-width:100%;font-size:0.9rem;}
       .secao{padding:28px 0;}
       .secao-titulo{font-size:1.2rem;white-space:normal;}
-      .livros-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+      .livros-grid{grid-template-columns:repeat(2,1fr);gap:12px;}.livro-card--destaque{grid-column:1/-1;width:70%;margin:0 auto;}
       .livro-info{padding:12px;}
       .livro-resumo{display:none;}
       .livro-botoes{flex-direction:column;gap:6px;}
@@ -242,7 +242,7 @@
     <section class="secao" id="livros">
       <div class="secao-header"><h2 class="secao-titulo">Catálogo Autoral</h2><div class="secao-linha"></div></div>
       <div class="livros-grid">
-        <div class="livro-card">
+        <div class="livro-card livro-card--destaque">
           <a href="/xpassarinho"><img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="livro-capa"/></a>
           <div class="livro-info">
             <span class="livro-tag">Lançamento</span>
