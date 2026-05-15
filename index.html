@@ -145,7 +145,10 @@
         .carrossel-hint{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);text-align:right;margin-bottom:8px;}
         .livros-grid--carrossel{display:flex;flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:16px;padding-bottom:12px;scrollbar-width:none;}
         .livros-grid--carrossel::-webkit-scrollbar{display:none;}
-        .livros-grid--carrossel .livro-card{min-width:72vw;max-width:72vw;scroll-snap-align:start;flex-shrink:0;}
+        .livros-grid--carrossel .livro-card{min-width:72vw;max-width:72vw;scroll-snap-align:start;flex-shrink:0;max-height:88vh;}
+        .livros-grid--carrossel .livro-capa{aspect-ratio:unset;height:36vh;width:100%;object-fit:cover;}
+        .livros-grid--carrossel .livro-info{padding:12px;}
+        .livros-grid--carrossel .livro-resumo{font-size:0.78rem;line-height:1.4;-webkit-line-clamp:4;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
         .carrossel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;}
         .carrossel-dot{width:6px;height:6px;border-radius:50%;background:var(--cinza-claro);transition:background 0.2s;}
         .carrossel-dot.ativo{background:var(--dourado);}
