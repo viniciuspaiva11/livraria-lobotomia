@@ -138,6 +138,18 @@
     @media(max-width:480px){
       .livros-grid{grid-template-columns:1fr;}
       .hero-titulo{font-size:1.9rem;}
+      /* Carrossel mobile — só parceiros */
+      .carrossel-hint{display:none;}
+      .carrossel-dots{display:none;}
+      @media(max-width:768px){
+        .carrossel-hint{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);text-align:right;margin-bottom:8px;}
+        .livros-grid--carrossel{display:flex;flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:16px;padding-bottom:12px;scrollbar-width:none;}
+        .livros-grid--carrossel::-webkit-scrollbar{display:none;}
+        .livros-grid--carrossel .livro-card{min-width:72vw;max-width:72vw;scroll-snap-align:start;flex-shrink:0;}
+        .carrossel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;}
+        .carrossel-dot{width:6px;height:6px;border-radius:50%;background:var(--cinza-claro);transition:background 0.2s;}
+        .carrossel-dot.ativo{background:var(--dourado);}
+      }
     }
   
     .nav-item-group{display:flex;flex-direction:column;gap:2px;}
@@ -224,7 +236,8 @@
         <section class="secao" id="parceiros">
       <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
       <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
-      <div class="livros-grid">
+      <p class="carrossel-hint">Deslize para ver todos →</p>
+      <div class="livros-grid livros-grid--carrossel">
 
         <div class="livro-card">
           <a href="https://go.hotmart.com/M105846850S" target="_blank"><img src="/parceiros/protocolo-antiotario.png" alt="Protocolo Antiotário" class="livro-capa"/></a>
@@ -373,6 +386,34 @@
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',function(){document.querySelectorAll('.nav-links a').forEach(x=>x.classList.remove('ativo'));this.classList.add('ativo');});});
 function toggleMenu(){const o=document.getElementById('menuOverlay');o.classList.toggle('aberto');document.body.style.overflow=o.classList.contains('aberto')?'hidden':'';}
 function fecharMenu(){document.getElementById('menuOverlay').classList.remove('aberto');document.body.style.overflow='';}
+</script>
+
+<script>
+(function(){
+  var grid = document.querySelector('#parceiros .livros-grid--carrossel');
+  if(!grid) return;
+  var cards = grid.querySelectorAll('.livro-card');
+  if(cards.length < 2) return;
+
+  // Criar bolinhas
+  var dotsWrap = document.createElement('div');
+  dotsWrap.className = 'carrossel-dots';
+  var dots = [];
+  for(var i = 0; i < cards.length; i++){
+    var d = document.createElement('span');
+    d.className = 'carrossel-dot' + (i === 0 ? ' ativo' : '');
+    dotsWrap.appendChild(d);
+    dots.push(d);
+  }
+  grid.parentNode.insertBefore(dotsWrap, grid.nextSibling);
+
+  // Atualizar dot ativo no scroll
+  grid.addEventListener('scroll', function(){
+    var cardW = cards[0].offsetWidth + 16;
+    var idx = Math.round(grid.scrollLeft / cardW);
+    dots.forEach(function(d,i){ d.className = 'carrossel-dot' + (i===idx?' ativo':''); });
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
