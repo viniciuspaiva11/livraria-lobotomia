@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Livraria Lobotomia — Reflexão e Desconforto</title>
+  <title>Livraria Lobotomia â ReflexÃ£o e Desconforto</title>
   <meta name="description" content="Selo editorial de livros que incomodam e esclarecem."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -112,18 +112,6 @@
       .ver-todos-logo{width:100%;height:100%;object-fit:contain;}
       .ver-todos-info{padding:12px;}
       .ver-todos-label{display:block;padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--dourado);border:none;text-align:center;}
-      /* Carrossel desktop parceiros */
-      .carrossel-desktop-wrap{position:relative;display:flex;align-items:center;gap:8px;}
-      .carrossel-btn{display:none;position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:var(--bg);border:1px solid var(--dourado);color:var(--dourado);font-size:1.2rem;width:36px;height:36px;border-radius:50%;cursor:pointer;transition:background 0.2s;}
-      .carrossel-btn:hover{background:var(--dourado);color:#fff;}
-      .carrossel-btn--prev{left:-44px;}
-      .carrossel-btn--next{right:-44px;}
-      @media(min-width:901px){
-        .carrossel-btn{display:flex;align-items:center;justify-content:center;}
-        .carrossel-hint{display:none;}
-        #parcCarrossel{overflow:hidden;flex:1;}
-        #parcCarrossel .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);scroll-snap-align:none;}
-      }
       @media(max-width:900px){
       .menu-mobile-btn{top:14px;}.hero-slogan-row{display:flex;align-items:center;justify-content:center;gap:12px;}.hero-slogan-row .menu-mobile-btn{position:static;display:flex;}
       nav.sidebar{display:none;}
@@ -154,7 +142,7 @@
       .ads-mobile{display:block;width:100%;background:rgba(136,135,128,0.04);border:1px dashed var(--cinza-claro);border-radius:3px;padding:14px;text-align:center;margin-bottom:8px;}
       .ads-mobile span{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:2px;color:var(--cinza);text-transform:uppercase;}
       .ads-mobile a{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--dourado);text-decoration:none;display:block;margin-top:6px;}
-      /* Carrossel mobile — só parceiros */
+      /* Carrossel mobile â sÃ³ parceiros */
       .carrossel-hint{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);text-align:right;margin-bottom:8px;}
       .livros-grid--carrossel{display:flex;flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:16px;padding-bottom:12px;scrollbar-width:none;}
       .livros-grid--carrossel::-webkit-scrollbar{display:none;}
@@ -171,7 +159,7 @@
       .carrossel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;}
       .carrossel-dot{width:6px;height:6px;border-radius:50%;background:var(--cinza-claro);transition:background 0.2s;}
       .carrossel-dot.ativo{background:var(--dourado);}
-      /* Carrossel mobile — só parceiros (regras movidas pra dentro do 768px) */
+      /* Carrossel mobile â sÃ³ parceiros (regras movidas pra dentro do 768px) */
       .carrossel-hint{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);text-align:right;margin-bottom:8px;}
       .livros-grid--carrossel{display:flex;flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:16px;padding-bottom:12px;scrollbar-width:none;}
       .livros-grid--carrossel::-webkit-scrollbar{display:none;}
@@ -207,11 +195,11 @@
 <div class="menu-mobile-overlay" id="menuOverlay">
   <div class="nav-logo"><img src="/logo.png" alt="Livraria Lobotomia"/></div>
   <div class="nav-links">
-    <a href="#inicio" onclick="fecharMenu()">Início</a>
-    <a href="/autoral" onclick="fecharMenu()">Catálogo Autoral</a>
+    <a href="#inicio" onclick="fecharMenu()">InÃ­cio</a>
+    <a href="/autoral" onclick="fecharMenu()">CatÃ¡logo Autoral</a>
     <a href="/malditos" onclick="fecharMenu()">Autores Malditos</a>
-    <a href="/parceiros" onclick="fecharMenu()">Publicações Parceiras</a>
-    <a href="#sobre" onclick="fecharMenu()">Sobre Nós</a>
+    <a href="/parceiros" onclick="fecharMenu()">PublicaÃ§Ãµes Parceiras</a>
+    <a href="#sobre" onclick="fecharMenu()">Sobre NÃ³s</a>
     <a href="#contatos" onclick="fecharMenu()">Contatos</a>
   </div>
   <div class="nav-footer">
@@ -226,11 +214,11 @@
   <nav class="sidebar">
     <div class="nav-logo"><img src="/logo.png" alt="Livraria Lobotomia"/></div>
     <div class="nav-links">
-      <a href="#inicio" class="ativo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.75L12 3l9 6.75V21H15v-6H9v6H3V9.75z"/></svg>Início</a>
-      <a href="#livros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>Catálogo Autoral</a>
+      <a href="#inicio" class="ativo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.75L12 3l9 6.75V21H15v-6H9v6H3V9.75z"/></svg>InÃ­cio</a>
+      <a href="#livros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>CatÃ¡logo Autoral</a>
       <a href="#malditos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M9.5 15a3.5 3.5 0 005 0"/></svg>Autores Malditos</a>
-      <a href="#parceiros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Publicações Parceiras</a>
-      <a href="#sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Sobre Nós</a>
+      <a href="#parceiros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>PublicaÃ§Ãµes Parceiras</a>
+      <a href="#sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Sobre NÃ³s</a>
       <a href="#contatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Contatos</a>
     </div>
     <div class="nav-footer">
@@ -244,21 +232,21 @@
     <section class="hero" id="inicio">
       <div class="hero-video-wrap"><video autoplay muted loop playsinline><source src="/animacao.mp4" type="video/mp4"/><img src="/lobotomia.png" alt="Livraria Lobotomia"/></video></div>
       <div>
-        <div class="hero-slogan-row"><p class="hero-slogan">Reflexão e Desconforto</p></div>
+        <div class="hero-slogan-row"><p class="hero-slogan">ReflexÃ£o e Desconforto</p></div>
         <p class="hero-desc">Selo editorial de livros que incomodam e esclarecem.</p>
       </div>
     </section>
-    <div class="ads-mobile"><span>Portal Audiências — inteligência esportiva</span></div>
+    <div class="ads-mobile"><span>Portal AudiÃªncias â inteligÃªncia esportiva</span></div>
     <section class="secao" id="livros">
-      <div class="secao-header"><h2 class="secao-titulo">Catálogo Autoral</h2><div class="secao-linha"></div></div>
+      <div class="secao-header"><h2 class="secao-titulo">CatÃ¡logo Autoral</h2><div class="secao-linha"></div></div>
       <div class="livros-grid">
         <div class="livro-card livro-card--destaque">
           <a href="/xpassarinho"><img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="livro-capa"/></a>
           <div class="livro-info">
-            <span class="livro-tag">Lançamento</span>
+            <span class="livro-tag">LanÃ§amento</span>
             <p class="livro-autor">Bouquard Lobo</p>
             <a href="/xpassarinho" style="text-decoration:none;"><h3 class="livro-titulo">X-Passarinho</h3></a>
-            <p class="livro-resumo">Como monetizar no X (Twitter) apesar do X. O guia mais honesto sobre a plataforma: algoritmo, punições e o que realmente funciona, com verdade e ironia.</p>
+            <p class="livro-resumo">Como monetizar no X (Twitter) apesar do X. O guia mais honesto sobre a plataforma: algoritmo, puniÃ§Ãµes e o que realmente funciona, com verdade e ironia.</p>
             <div style="margin-bottom:4px;"><span class="livro-preco-riscado">R$ 67</span><span class="livro-preco">R$ 47</span></div>
             <div class="livro-botoes">
               <a href="/xpassarinho" class="btn-saiba">Saiba mais</a>
@@ -271,24 +259,22 @@
     <div class="ads-mobile"><span>Anuncie aqui</span></div>
     <section class="secao" id="malditos">
       <div class="secao-header"><h2 class="secao-titulo">Autores Malditos</h2><div class="secao-linha"></div></div>
-      <div class="em-breve-box"><div><h3 class="em-breve-titulo">Clássicos que seriam cancelados hoje</h3><p class="em-breve-sub">Edições comentadas de obras em domínio público com o contexto que elas merecem</p></div><span class="em-breve-badge">Em breve</span></div>
+      <div class="em-breve-box"><div><h3 class="em-breve-titulo">ClÃ¡ssicos que seriam cancelados hoje</h3><p class="em-breve-sub">EdiÃ§Ãµes comentadas de obras em domÃ­nio pÃºblico com o contexto que elas merecem</p></div><span class="em-breve-badge">Em breve</span></div>
     </section>
     <div class="ads-mobile"><span>Anuncie aqui</span></div>
         <section class="secao" id="parceiros">
-      <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
-      <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
-      <p class="carrossel-hint">Deslize para ver todos →</p>
-      <div class="carrossel-desktop-wrap">
-        <button class="carrossel-btn carrossel-btn--prev" id="parcPrev" aria-label="Anterior">&#8592;</button>
-        <div class="livros-grid livros-grid--carrossel" id="parcCarrossel">
+      <div class="secao-header"><h2 class="secao-titulo">PublicaÃ§Ãµes Parceiras</h2><div class="secao-linha"></div></div>
+      <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">PublicaÃ§Ãµes de outros autores e ambientes que compartilham nossa curadoria, sem concessÃµes editoriais</p></div></div>
+      <p class="carrossel-hint">Deslize para ver todos â</p>
+      <div class="livros-grid livros-grid--carrossel">
 
         <div class="livro-card">
-          <a href="https://go.hotmart.com/M105846850S" target="_blank"><img src="/parceiros/protocolo-antiotario.png" alt="Protocolo Antiotário" class="livro-capa"/></a>
+          <a href="https://go.hotmart.com/M105846850S" target="_blank"><img src="/parceiros/protocolo-antiotario.png" alt="Protocolo AntiotÃ¡rio" class="livro-capa"/></a>
           <div class="livro-info">
             <span class="livro-tag">Hotmart</span>
             <p class="livro-autor">Por Rafael Aires</p>
-            <h3 class="livro-titulo">Protocolo Antiotário</h3>
-            <p class="livro-resumo">Estratégias práticas para blindar sua vida da influência de pessoas tóxicas e manipuladoras.</p>
+            <h3 class="livro-titulo">Protocolo AntiotÃ¡rio</h3>
+            <p class="livro-resumo">EstratÃ©gias prÃ¡ticas para blindar sua vida da influÃªncia de pessoas tÃ³xicas e manipuladoras.</p>
             <div class="livro-botoes">
               <a href="https://go.hotmart.com/M105846850S" target="_blank" class="btn-saiba">Saiba mais</a>
               <a href="https://go.hotmart.com/M105846850S?dp=1" target="_blank" class="btn-comprar">Comprar</a>
@@ -297,12 +283,12 @@
         </div>
 
         <div class="livro-card">
-          <a href="https://go.hotmart.com/W105835362X?dp=1" target="_blank"><img src="/parceiros/alem-da-etica.webp" alt="Além da ética: 50 técnicas ocultas da manipulação" class="livro-capa"/></a>
+          <a href="https://go.hotmart.com/W105835362X?dp=1" target="_blank"><img src="/parceiros/alem-da-etica.webp" alt="AlÃ©m da Ã©tica: 50 tÃ©cnicas ocultas da manipulaÃ§Ã£o" class="livro-capa"/></a>
           <div class="livro-info">
             <span class="livro-tag">Hotmart</span>
             <p class="livro-autor">Por Doctor X</p>
-            <h3 class="livro-titulo titulo-longo">Além da ética: 50 técnicas ocultas da manipulação</h3>
-            <p class="livro-resumo">O mapa do que não te ensinaram sobre influência, persuasão e controle social.</p>
+            <h3 class="livro-titulo titulo-longo">AlÃ©m da Ã©tica: 50 tÃ©cnicas ocultas da manipulaÃ§Ã£o</h3>
+            <p class="livro-resumo">O mapa do que nÃ£o te ensinaram sobre influÃªncia, persuasÃ£o e controle social.</p>
             <div class="livro-botoes">
               <a href="https://go.hotmart.com/W105835362X?dp=1" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -315,7 +301,7 @@
             <span class="livro-tag">Amazon</span>
             <p class="livro-autor">Por Daniel Lopez</p>
             <h3 class="livro-titulo">90 Segundos para o Apocalipse</h3>
-            <p class="livro-resumo">O Relógio do Juízo Final está a 90 segundos da meia-noite — e não por acaso. Daniel Lopez disseca a engrenagem por trás das manchetes: o Great Reset, a guerra, a escassez fabricada, a Nova Ordem que se alimenta do medo dos povos.</p>
+            <p class="livro-resumo">O RelÃ³gio do JuÃ­zo Final estÃ¡ a 90 segundos da meia-noite â e nÃ£o por acaso. Daniel Lopez disseca a engrenagem por trÃ¡s das manchetes: o Great Reset, a guerra, a escassez fabricada, a Nova Ordem que se alimenta do medo dos povos.</p>
             <div class="livro-botoes">
               <a href="https://amzn.to/3Pq14jl" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -323,12 +309,12 @@
         </div>
 
         <div class="livro-card">
-          <a href="https://amzn.to/4ucuO2h" target="_blank"><img src="/parceiros/a-beira-do-abismo.jpg" alt="À beira do abismo" class="livro-capa"/></a>
+          <a href="https://amzn.to/4ucuO2h" target="_blank"><img src="/parceiros/a-beira-do-abismo.jpg" alt="Ã beira do abismo" class="livro-capa"/></a>
           <div class="livro-info">
             <span class="livro-tag">Amazon</span>
             <p class="livro-autor">Por Daniel Lopez</p>
-            <h3 class="livro-titulo">À beira do abismo</h3>
-            <p class="livro-resumo">Daniel Lopez mapeia o biênio mais turbulento da política mundial recente: pandemia, colapso afegão, guerra na Europa, o avanço silencioso do globalismo. “Você não terá nada e será feliz” deixou de ser piada e virou projeto.</p>
+            <h3 class="livro-titulo">Ã beira do abismo</h3>
+            <p class="livro-resumo">Daniel Lopez mapeia o biÃªnio mais turbulento da polÃ­tica mundial recente: pandemia, colapso afegÃ£o, guerra na Europa, o avanÃ§o silencioso do globalismo. âVocÃª nÃ£o terÃ¡ nada e serÃ¡ felizâ deixou de ser piada e virou projeto.</p>
             <div class="livro-botoes">
               <a href="https://amzn.to/4ucuO2h" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -336,12 +322,12 @@
         </div>
 
         <div class="livro-card">
-          <a href="https://amzn.to/4uTPVqn" target="_blank"><img src="/parceiros/politica-ideologia-conspiracoes.jpg" alt="Política, Ideologia e Conspirações" class="livro-capa"/></a>
+          <a href="https://amzn.to/4uTPVqn" target="_blank"><img src="/parceiros/politica-ideologia-conspiracoes.jpg" alt="PolÃ­tica, Ideologia e ConspiraÃ§Ãµes" class="livro-capa"/></a>
           <div class="livro-info">
             <span class="livro-tag">Amazon</span>
             <p class="livro-autor">Por Gary Allen</p>
-            <h3 class="livro-titulo">Política, Ideologia e Conspirações</h3>
-            <p class="livro-resumo">Publicado em 1971 e nunca superado: o livro que ensinou gerações a ver o desenho escondido atrás do noticiário. A história não é feita de acidentes nem de incompetência — mas de planejamento. E quem vence financia os dois lados.</p>
+            <h3 class="livro-titulo">PolÃ­tica, Ideologia e ConspiraÃ§Ãµes</h3>
+            <p class="livro-resumo">Publicado em 1971 e nunca superado: o livro que ensinou geraÃ§Ãµes a ver o desenho escondido atrÃ¡s do noticiÃ¡rio. A histÃ³ria nÃ£o Ã© feita de acidentes nem de incompetÃªncia â mas de planejamento. E quem vence financia os dois lados.</p>
             <div class="livro-botoes">
               <a href="https://amzn.to/4uTPVqn" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -354,7 +340,7 @@
             <span class="livro-tag">Amazon</span>
             <p class="livro-autor">Por Andrew Lobaczewski</p>
             <h3 class="livro-titulo">Ponerologia: Psicopatas no Poder</h3>
-            <p class="livro-resumo">Como pessoas racionais passam a amar governos genocidas? Lobaczewski respondeu a isso clandestinamente, sob o regime que o perseguia. Nasceu a ponerologia: o estudo de como psicopatas capturam instituições e nações. Prefácio de Olavo de Carvalho.</p>
+            <p class="livro-resumo">Como pessoas racionais passam a amar governos genocidas? Lobaczewski respondeu a isso clandestinamente, sob o regime que o perseguia. Nasceu a ponerologia: o estudo de como psicopatas capturam instituiÃ§Ãµes e naÃ§Ãµes. PrefÃ¡cio de Olavo de Carvalho.</p>
             <div class="livro-botoes">
               <a href="https://amzn.to/4wvVc99" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -362,12 +348,12 @@
         </div>
 
         <div class="livro-card">
-          <a href="https://amzn.to/4tGLuOu" target="_blank"><img src="/parceiros/guia-incorreto-historia.jpg" alt="Guia Politicamente Incorreto da História do Brasil" class="livro-capa"/></a>
+          <a href="https://amzn.to/4tGLuOu" target="_blank"><img src="/parceiros/guia-incorreto-historia.jpg" alt="Guia Politicamente Incorreto da HistÃ³ria do Brasil" class="livro-capa"/></a>
           <div class="livro-info">
             <span class="livro-tag">Amazon</span>
             <p class="livro-autor">Por Leandro Narloch</p>
-            <h3 class="livro-titulo titulo-longo">Guia Politicamente Incorreto da História do Brasil</h3>
-            <p class="livro-resumo">A história do Brasil que você aprendeu na escola foi mais lição de moral do que história. Narloch reabre o arquivo e desmonta os mitos do bom selvagem, da Guerra do Paraguai e dos heróis de bronze. E se a versão oficial não for a verdadeira?</p>
+            <h3 class="livro-titulo titulo-longo">Guia Politicamente Incorreto da HistÃ³ria do Brasil</h3>
+            <p class="livro-resumo">A histÃ³ria do Brasil que vocÃª aprendeu na escola foi mais liÃ§Ã£o de moral do que histÃ³ria. Narloch reabre o arquivo e desmonta os mitos do bom selvagem, da Guerra do Paraguai e dos herÃ³is de bronze. E se a versÃ£o oficial nÃ£o for a verdadeira?</p>
             <div class="livro-botoes">
               <a href="https://amzn.to/4tGLuOu" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -380,7 +366,7 @@
             <span class="livro-tag">Amazon</span>
             <p class="livro-autor">Por Leandro Narloch</p>
             <h3 class="livro-titulo titulo-longo">Guia Politicamente Incorreto da Economia Brasileira</h3>
-            <p class="livro-resumo">E se o maior inimigo do trabalhador for quem diz defendê-lo? Narloch vira do avesso os clichês econômicos repetidos todo dia — leis trabalhistas, salário-mínimo, proteção à indústria — e mostra como as boas intenções emperram o país.</p>
+            <p class="livro-resumo">E se o maior inimigo do trabalhador for quem diz defendÃª-lo? Narloch vira do avesso os clichÃªs econÃ´micos repetidos todo dia â leis trabalhistas, salÃ¡rio-mÃ­nimo, proteÃ§Ã£o Ã  indÃºstria â e mostra como as boas intenÃ§Ãµes emperram o paÃ­s.</p>
             <div class="livro-botoes">
               <a href="https://amzn.to/48XZFaA" target="_blank" class="btn-comprar">Comprar</a>
             </div>
@@ -394,17 +380,15 @@
           </div>
         </a>
       </div>
-        <button class="carrossel-btn carrossel-btn--next" id="parcNext" aria-label="Próximo">&#8594;</button>
-      </div>
     </section>
     <section class="secao" id="sobre">
-      <div class="secao-header"><h2 class="secao-titulo">Sobre Nós</h2><div class="secao-linha"></div></div>
+      <div class="secao-header"><h2 class="secao-titulo">Sobre NÃ³s</h2><div class="secao-linha"></div></div>
       <div class="sobre-texto">
-        <p>Existe uma operação silenciosa em curso na cultura contemporânea. Ela não proíbe livros, isto seria grosseiro demais. Ela apenas os torna desnecessários. Substitui o pensamento, a autoria e a autenticidade pela validação, a dopamina e o vídeo curto. O resultado é um mundo intelectualmente plastificado.</p>
-        <p>A Livraria Lobotomia existe para quem acha isso insuportável.</p>
-        <p>Não somos um mero marketplace de infoprodutos, nem uma casa com valores fundamentais pendurados na parede. Somos um selo editorial com personalidade, curadoria e — sim — lado. Quem espera neutralidade aqui vai se decepcionar.</p>
-        <p>Publicamos obras que incomodam, provocam e até se contradizem, porque é delicioso ser o complexo fruto de nossas contradições internas. Publicaremos autores que foram amaldiçoados e incompreendidos em vida. Textos sobre masculinidade sem pedido de desculpas pelo homem existir. Tecnologia sem tato, política sem pasteurização. E futebol, porque ninguém é de ferro. Mas sempre mexendo em vespeiros.</p>
-        <p>Pensamentos que irritam algoritmos é um de nossos lemas. Literatura que envelheceu mal para as pessoas certas — ou que já nasceu dando azia. A Livraria Lobotomia é um sopro de renovação e um enxerto de conhecimento. Todas as obras trarão reflexão e desconforto, porque muitas vezes o que o mercado editorial prefere não ler é o que mais merece ser lido.</p>
+        <p>Existe uma operaÃ§Ã£o silenciosa em curso na cultura contemporÃ¢nea. Ela nÃ£o proÃ­be livros, isto seria grosseiro demais. Ela apenas os torna desnecessÃ¡rios. Substitui o pensamento, a autoria e a autenticidade pela validaÃ§Ã£o, a dopamina e o vÃ­deo curto. O resultado Ã© um mundo intelectualmente plastificado.</p>
+        <p>A Livraria Lobotomia existe para quem acha isso insuportÃ¡vel.</p>
+        <p>NÃ£o somos um mero marketplace de infoprodutos, nem uma casa com valores fundamentais pendurados na parede. Somos um selo editorial com personalidade, curadoria e â sim â lado. Quem espera neutralidade aqui vai se decepcionar.</p>
+        <p>Publicamos obras que incomodam, provocam e atÃ© se contradizem, porque Ã© delicioso ser o complexo fruto de nossas contradiÃ§Ãµes internas. Publicaremos autores que foram amaldiÃ§oados e incompreendidos em vida. Textos sobre masculinidade sem pedido de desculpas pelo homem existir. Tecnologia sem tato, polÃ­tica sem pasteurizaÃ§Ã£o. E futebol, porque ninguÃ©m Ã© de ferro. Mas sempre mexendo em vespeiros.</p>
+        <p>Pensamentos que irritam algoritmos Ã© um de nossos lemas. Literatura que envelheceu mal para as pessoas certas â ou que jÃ¡ nasceu dando azia. A Livraria Lobotomia Ã© um sopro de renovaÃ§Ã£o e um enxerto de conhecimento. Todas as obras trarÃ£o reflexÃ£o e desconforto, porque muitas vezes o que o mercado editorial prefere nÃ£o ler Ã© o que mais merece ser lido.</p>
       </div>
     </section>
     <section class="secao" id="contatos">
@@ -422,7 +406,7 @@
       <p class="side-label">Parceiros</p>
       <a href="https://audiencias.com.br" target="_blank" class="banner-slot">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:34px;height:34px;color:#C9A86C;flex-shrink:0;"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        <div><span class="banner-nome">Portal<br>Audiências</span><span class="banner-sub" style="display:block;margin-top:4px;">Inteligência esportiva</span></div>
+        <div><span class="banner-nome">Portal<br>AudiÃªncias</span><span class="banner-sub" style="display:block;margin-top:4px;">InteligÃªncia esportiva</span></div>
       </a>
     </div>
     <div>
@@ -432,7 +416,7 @@
     </div>
   </aside>
 </div>
-<footer><span>© 2026 Livraria Lobotomia</span><span>Reflexão e Desconforto</span></footer>
+<footer><span>Â© 2026 Livraria Lobotomia</span><span>ReflexÃ£o e Desconforto</span></footer>
 <script>
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',function(){document.querySelectorAll('.nav-links a').forEach(x=>x.classList.remove('ativo'));this.classList.add('ativo');});});
 function toggleMenu(){const o=document.getElementById('menuOverlay');o.classList.toggle('aberto');document.body.style.overflow=o.classList.contains('aberto')?'hidden':'';}
@@ -465,31 +449,6 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
     dots.forEach(function(d,i){ d.className = 'carrossel-dot' + (i===idx?' ativo':''); });
   }, {passive:true});
 })();
-  // Carrossel desktop parceiros
-  (function(){
-    var track = document.getElementById('parcCarrossel');
-    var prev = document.getElementById('parcPrev');
-    var next = document.getElementById('parcNext');
-    if(!track || !prev || !next) return;
-    var idx = 0;
-    function getCards(){ return Array.from(track.querySelectorAll('.livro-card')); }
-    function update(){
-      if(window.innerWidth < 901){ track.style.transform=''; track.style.transition=''; return; }
-      var cards = getCards();
-      var vis = 4;
-      var max = Math.max(0, cards.length - vis);
-      idx = Math.max(0, Math.min(idx, max));
-      var w = cards[0] ? cards[0].offsetWidth + 16 : 0;
-      track.style.transform = 'translateX(-' + (idx * w) + 'px)';
-      track.style.transition = 'transform 0.35s ease';
-      prev.style.opacity = idx === 0 ? '0.35' : '1';
-      next.style.opacity = idx >= max ? '0.35' : '1';
-    }
-    prev.addEventListener('click', function(){ idx--; update(); });
-    next.addEventListener('click', function(){ idx++; update(); });
-    window.addEventListener('resize', update);
-    setTimeout(update, 100);
-  })();
 </script>
 </body>
 </html>
