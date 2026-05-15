@@ -147,10 +147,7 @@
         .livros-grid--carrossel::-webkit-scrollbar{display:none;}
         .livros-grid--carrossel .livro-card{min-width:58vw;max-width:58vw;scroll-snap-align:start;flex-shrink:0;}
         .livros-grid--carrossel .livro-capa{aspect-ratio:2/3;width:100%;object-fit:cover;display:block;}
-        .livros-grid--carrossel .livro-titulo{font-size:0.82rem;line-height:1.2;}
-        .livros-grid--carrossel .livro-resumo{font-size:0.72rem;line-height:1.3;}
         .livros-grid--carrossel .livro-info{padding:12px;}
-        .livros-grid--carrossel .livro-resumo{font-size:0.78rem;line-height:1.4;-webkit-line-clamp:4;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;}
         .carrossel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px;}
         .carrossel-dot{width:6px;height:6px;border-radius:50%;background:var(--cinza-claro);transition:background 0.2s;}
         .carrossel-dot.ativo{background:var(--dourado);}
@@ -418,6 +415,15 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
     var idx = Math.round(grid.scrollLeft / cardW);
     dots.forEach(function(d,i){ d.className = 'carrossel-dot' + (i===idx?' ativo':''); });
   }, {passive:true});
+
+  // Reduzir fonte dos titulos longos (mais de 2 linhas)
+  if(window.innerWidth <= 768){
+    var titulos = grid.querySelectorAll('.livro-titulo');
+    titulos.forEach(function(t){
+      var lineH = parseFloat(getComputedStyle(t).lineHeight);
+      if(t.offsetHeight > lineH * 2.2){ t.style.fontSize = '0.82rem'; t.style.lineHeight = '1.2'; }
+    });
+  }
 })();
 </script>
 </body>
