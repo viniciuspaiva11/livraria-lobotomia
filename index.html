@@ -139,6 +139,13 @@
       .livros-grid{grid-template-columns:1fr;}
       .hero-titulo{font-size:1.9rem;}
     }
+  
+    .nav-item-group{display:flex;flex-direction:column;gap:2px;}
+    .nav-ver-tudo{font-size:10px;letter-spacing:1px;color:var(--dourado);text-transform:uppercase;padding:0 0 4px 0;opacity:0.8;}
+    .nav-ver-tudo:hover{opacity:1;}
+    .voltar-home{padding:16px 0 8px;}
+    .btn-voltar{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--cinza);text-decoration:none;border:0.5px solid var(--cinza-claro);padding:6px 14px;border-radius:2px;transition:color 0.2s,border-color 0.2s;}
+    .btn-voltar:hover{color:var(--dourado);border-color:var(--dourado);}
   </style>
 </head>
 <body>
@@ -147,9 +154,7 @@
   <div class="nav-logo"><img src="/logo.png" alt="Livraria Lobotomia"/></div>
   <div class="nav-links">
     <a href="#inicio" onclick="fecharMenu()">Início</a>
-    <a href="#livros" onclick="fecharMenu()">Catálogo Autoral</a>
-    <a href="#malditos" onclick="fecharMenu()">Autores Malditos</a>
-    <a href="#parceiros" onclick="fecharMenu()">Publicações Parceiras</a>
+    <a <span class="nav-item-group"><a href="#livros" onclick="fecharMenu()">Catálogo Autoral</a><a href="/autoral" class="nav-ver-tudo">ver tudo →</a></span>  <a <span class="nav-item-group"><a href="#malditos" onclick="fecharMenu()">Autores Malditos</a><a href="/malditos" class="nav-ver-tudo">ver tudo →</a></span> class="nav-item-group"><a href="#parceiros" onclick="fecharMenu()">Publicações Parceiras</a><a href="/parceiros" class="nav-ver-tudo">ver tudo →</a></span>ras</a>
     <a href="#sobre" onclick="fecharMenu()">Sobre Nós</a>
     <a href="#contatos" onclick="fecharMenu()">Contatos</a>
   </div>
