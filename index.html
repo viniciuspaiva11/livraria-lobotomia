@@ -112,6 +112,18 @@
       .ver-todos-logo{width:100%;height:100%;object-fit:contain;}
       .ver-todos-info{padding:12px;}
       .ver-todos-label{display:block;padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--dourado);border:none;text-align:center;}
+      /* Carrossel desktop parceiros */
+      .carrossel-desktop-wrap{position:relative;display:flex;align-items:center;gap:8px;}
+      .carrossel-btn{display:none;position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:var(--bg);border:1px solid var(--dourado);color:var(--dourado);font-size:1.2rem;width:36px;height:36px;border-radius:50%;cursor:pointer;transition:background 0.2s;}
+      .carrossel-btn:hover{background:var(--dourado);color:#fff;}
+      .carrossel-btn--prev{left:-44px;}
+      .carrossel-btn--next{right:-44px;}
+      @media(min-width:901px){
+        .carrossel-btn{display:flex;align-items:center;justify-content:center;}
+        .carrossel-hint{display:none;}
+        #parcCarrossel{overflow:hidden;flex:1;}
+        #parcCarrossel .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);scroll-snap-align:none;}
+      }
       @media(max-width:900px){
       .menu-mobile-btn{top:14px;}.hero-slogan-row{display:flex;align-items:center;justify-content:center;gap:12px;}.hero-slogan-row .menu-mobile-btn{position:static;display:flex;}
       nav.sidebar{display:none;}
@@ -266,7 +278,9 @@
       <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
       <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
       <p class="carrossel-hint">Deslize para ver todos →</p>
-      <div class="livros-grid livros-grid--carrossel">
+      <div class="carrossel-desktop-wrap">
+        <button class="carrossel-btn carrossel-btn--prev" id="parcPrev" aria-label="Anterior">&#8592;</button>
+        <div class="livros-grid livros-grid--carrossel" id="parcCarrossel">
 
         <div class="livro-card">
           <a href="https://go.hotmart.com/M105846850S" target="_blank"><img src="/parceiros/protocolo-antiotario.png" alt="Protocolo Antiotário" class="livro-capa"/></a>
@@ -380,6 +394,8 @@
           </div>
         </a>
       </div>
+        <button class="carrossel-btn carrossel-btn--next" id="parcNext" aria-label="Próximo">&#8594;</button>
+      </div>
     </section>
     <section class="secao" id="sobre">
       <div class="secao-header"><h2 class="secao-titulo">Sobre Nós</h2><div class="secao-linha"></div></div>
@@ -449,6 +465,31 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
     dots.forEach(function(d,i){ d.className = 'carrossel-dot' + (i===idx?' ativo':''); });
   }, {passive:true});
 })();
+  // Carrossel desktop parceiros
+  (function(){
+    var track = document.getElementById('parcCarrossel');
+    var prev = document.getElementById('parcPrev');
+    var next = document.getElementById('parcNext');
+    if(!track || !prev || !next) return;
+    var idx = 0;
+    function getCards(){ return Array.from(track.querySelectorAll('.livro-card')); }
+    function update(){
+      if(window.innerWidth < 901){ track.style.transform=''; track.style.transition=''; return; }
+      var cards = getCards();
+      var vis = 4;
+      var max = Math.max(0, cards.length - vis);
+      idx = Math.max(0, Math.min(idx, max));
+      var w = cards[0] ? cards[0].offsetWidth + 16 : 0;
+      track.style.transform = 'translateX(-' + (idx * w) + 'px)';
+      track.style.transition = 'transform 0.35s ease';
+      prev.style.opacity = idx === 0 ? '0.35' : '1';
+      next.style.opacity = idx >= max ? '0.35' : '1';
+    }
+    prev.addEventListener('click', function(){ idx--; update(); });
+    next.addEventListener('click', function(){ idx++; update(); });
+    window.addEventListener('resize', update);
+    setTimeout(update, 100);
+  })();
 </script>
 </body>
 </html>
