@@ -114,6 +114,21 @@
       .ver-todos-info{padding:12px;}
       .ver-todos-label{display:block;padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--dourado);border:none;text-align:center;}
       /* ====================================================
+     DESKTOP ONLY (min-width:901px)
+     Regras aqui NÃO afetam mobile.
+     ==================================================== */
+    @media(min-width:901px){
+      .carrossel-hint{display:none;}
+      #parcCarrossel{overflow:hidden;display:flex;flex-direction:row;gap:16px;scroll-snap-type:none;padding-bottom:0;}
+      #parcCarrossel .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);flex-shrink:0;scroll-snap-align:none;}
+      .carrossel-desktop-wrap{position:relative;}
+      .carossel-btn-prev,.carossel-btn-next{display:flex;align-items:center;justify-content:center;position:absolute;top:40%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--bg);border:1.5px solid var(--dourado);color:var(--dourado);font-size:1.1rem;cursor:pointer;z-index:10;transition:background 0.2s,color 0.2s;}
+      .carossel-btn-prev:hover,.carossel-btn-next:hover{background:var(--dourado);color:#fff;}
+      .carossel-btn-prev{left:-44px;}
+      .carossel-btn-next{right:-44px;}
+      .carossel-btn-prev[disabled],.carossel-btn-next[disabled]{opacity:0.3;cursor:default;}
+    }
+    /* ====================================================
      MOBILE ONLY (max-width:900px)
      Regras aqui SOBRESCREVEM desktop.
      Para desktop: usar @media(min-width:901px) FORA deste bloco.
@@ -273,7 +288,9 @@
       <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
       <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
       <p class="carrossel-hint">Deslize para ver todos →</p>
-      <div class="livros-grid livros-grid--carrossel">
+      <div class="carrossel-desktop-wrap">
+        <button class="carossel-btn-prev" id="parcPrev" disabled>&#8592;</button>
+        <div class="livros-grid livros-grid--carrossel" id="parcCarrossel">
 
         <div class="livro-card">
           <a href="https://go.hotmart.com/M105846850S" target="_blank"><img src="/parceiros/protocolo-antiotario.png" alt="Protocolo Antiotário" class="livro-capa"/></a>
@@ -386,6 +403,8 @@
             <span class="ver-todos-label">Ver todos os parceiros</span>
           </div>
         </a>
+        </div>
+        <button class="carossel-btn-next" id="parcNext">&#8594;</button>
       </div>
     </section>
     <section class="secao" id="sobre">
@@ -456,6 +475,30 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
     dots.forEach(function(d,i){ d.className = 'carrossel-dot' + (i===idx?' ativo':''); });
   }, {passive:true});
 })();
+  // Carrossel desktop parceiros — só ativa acima de 900px
+  (function(){
+    if(window.innerWidth <= 900) return;
+    var track = document.getElementById('parcCarrossel');
+    var btnPrev = document.getElementById('parcPrev');
+    var btnNext = document.getElementById('parcNext');
+    if(!track || !btnPrev || !btnNext) return;
+    var idx = 0;
+    var VIS = 4;
+    function cards(){ return Array.from(track.querySelectorAll('.livro-card')); }
+    function cardW(){ var c = cards(); return c[0] ? c[0].offsetWidth + 16 : 0; }
+    function maxIdx(){ return Math.max(0, cards().length - VIS); }
+    function update(){
+      var w = cardW();
+      track.style.transform = 'translateX(-' + (idx * w) + 'px)';
+      track.style.transition = 'transform 0.3s ease';
+      btnPrev.disabled = idx === 0;
+      btnNext.disabled = idx >= maxIdx();
+    }
+    btnPrev.addEventListener('click', function(){ if(idx > 0){ idx--; update(); } });
+    btnNext.addEventListener('click', function(){ if(idx < maxIdx()){ idx++; update(); } });
+    window.addEventListener('resize', function(){ if(window.innerWidth <= 900){ track.style.transform=''; } else { update(); } });
+    setTimeout(update, 150);
+  })();
 </script>
 </body>
 </html>
