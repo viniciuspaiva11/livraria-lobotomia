@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado pela sua compra – O Fim do Mundo em Sessenta Segundos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF2H6X0RD1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JF2H6X0RD1');
+
+    // Evento de compra – dispara conversao no Google Ads via GA4
+    const params = new URLSearchParams(window.location.search);
+    gtag('event', 'purchase', {
+      transaction_id: params.get('pedido') || 'unknown',
+      value: parseFloat(params.get('valor')) || 67.00,
+      currency: 'BRL',
+      items: [{
+        item_id: 'sessentasegundos',
+        item_name: 'O Fim do Mundo em Sessenta Segundos',
+        price: 67.00,
+        quantity: 1
+      }]
+    });
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1834320934116107');
+    fbq('track','PageView');
+    fbq('track','Purchase',{value:67,currency:'BRL'});
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1834320934116107&ev=Purchase&noscript=1&cd[value]=67&cd[currency]=BRL"/></noscript>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#f0ede6;font-family:'DM Sans',sans-serif;color:#2c2c2a;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;}
+    .container{max-width:560px;width:100%;text-align:center;}
+    .logo{width:120px;margin:0 auto 32px;}
+    .icone{font-size:3rem;margin-bottom:16px;}
+    h1{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#1a1a18;margin-bottom:12px;}
+    .subtitulo{font-size:1.05rem;color:#555;line-height:1.6;margin-bottom:28px;}
+    .destaque{background:#fff;border:1px solid #d3d1c7;border-radius:4px;padding:20px 24px;margin-bottom:28px;text-align:left;}
+    .destaque p{font-size:0.9rem;line-height:1.7;color:#2c2c2a;}
+    .btn{display:inline-block;background:#C9A86C;color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;text-decoration:none;margin-top:8px;}
+    .rodape{margin-top:40px;font-size:0.8rem;color:#888;line-height:1.6;}
+    .rodape a{color:#C9A86C;text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="/logo.png" alt="Livraria Lobotomia" />
+    <div class="icone">&#10003;</div>
+    <h1>Compra confirmada</h1>
+    <p class="subtitulo">Obrigado pela sua compra de <strong>O Fim do Mundo em Sessenta Segundos</strong>. O acesso será enviado ao e-mail cadastrado no lançamento, em 30/05/2026.</p>
+    <div class="destaque">
+      <p><strong>O que acontece agora?</strong><br/>
+      Você receberá o e-book (PDF e EPUB) automaticamente no seu e-mail em 30/05/2026. Uma edição revista e atualizada será enviada gratuitamente em até 60 dias após o lançamento.</p>
+    </div>
+    <a class="btn" href="https://www.livrarialobotomia.com.br">Voltar à Livraria</a>
+    <p class="rodape">Dúvidas? <a href="mailto:contato@livrarialobotomia.com.br">contato@livrarialobotomia.com.br</a></p>
+  </div>
+</body>
+</html>
