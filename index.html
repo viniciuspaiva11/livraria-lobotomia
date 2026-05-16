@@ -140,6 +140,7 @@
      ==================================================== */
     @media(max-width:900px){
       .parc-btn,.parc-nav-btn,.parc-nav{display:none!important;}
+      .livros-grid--carrossel .livro-card--destaque{grid-column:auto;width:auto;}
       .menu-mobile-btn{top:14px;}.hero-slogan-row{display:flex;align-items:center;justify-content:center;gap:12px;}.hero-slogan-row .menu-mobile-btn{position:static;display:flex;}
       nav.sidebar{display:none;}
       aside.anunciantes{display:none;}
@@ -267,7 +268,8 @@
     <div class="ads-mobile"><span>Portal Audiências — inteligência esportiva</span></div>
     <section class="secao" id="livros">
       <div class="secao-header"><h2 class="secao-titulo">Catálogo Autoral</h2><div class="secao-linha"></div></div>
-      <div class="livros-grid">
+      <p class="carrossel-hint">Deslize para ver todos →</p>
+      <div class="livros-grid livros-grid--carrossel">
         <div class="livro-card livro-card--destaque">
           <a href="/xpassarinho"><img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="livro-capa"/></a>
           <div class="livro-info">
