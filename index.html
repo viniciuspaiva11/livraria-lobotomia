@@ -121,12 +121,15 @@
       #parcGrid{display:flex;flex-direction:row;gap:16px;scroll-snap-type:none;padding-bottom:0;transition:transform 0.4s ease;will-change:transform;}
       #parcGrid .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);flex-shrink:0;scroll-snap-align:none;}
       .carrossel-hint{display:none;}
-      .parc-btn{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1.5px solid var(--dourado);color:var(--dourado);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;position:absolute;top:35%;transform:translateY(-50%);z-index:5;}
-      .parc-btn:hover{background:var(--dourado);color:#fff;}
-      .parc-btn:disabled{opacity:0.3;cursor:default;pointer-events:none;}
-      #parcPrev{left:-44px;}
-      #parcNext{right:-44px;}
-      .parc-nav{display:flex;justify-content:center;gap:10px;margin-top:16px;}
+      .parc-btn{width:72px;height:72px;border-radius:50%;background:var(--dourado);border:none;color:#fff;font-size:1.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity 0.2s;position:absolute;top:35%;transform:translateY(-50%);z-index:5;box-shadow:0 2px 8px rgba(0,0,0,0.15);}
+      .parc-btn:hover{opacity:0.85;}
+      .parc-btn:disabled{opacity:0.25;cursor:default;pointer-events:none;}
+      #parcPrev{left:-50px;}
+      #parcNext{right:-50px;}
+      .parc-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px;}
+      .parc-nav-btn{width:28px;height:28px;border-radius:50%;background:var(--bg);border:1.5px solid var(--dourado);color:var(--dourado);font-size:0.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;}
+      .parc-nav-btn:hover{background:var(--dourado);color:#fff;}
+      .parc-nav-btn:disabled{opacity:0.3;cursor:default;pointer-events:none;}
       .parc-dot{width:10px;height:10px;border-radius:50%;background:var(--cinza-claro);border:none;cursor:pointer;padding:0;transition:background 0.2s;}
       .parc-dot.ativo{background:var(--dourado);}
     }
@@ -410,7 +413,11 @@
       <button class="parc-btn" id="parcPrev" disabled>&#8592;</button>
       <button class="parc-btn" id="parcNext">&#8594;</button>
       </div>
-      <div class="parc-nav" id="parcDots"></div>
+      <div class="parc-nav">
+        <button class="parc-nav-btn" id="parcPrev2" disabled>&#8592;</button>
+        <div id="parcDots" style="display:flex;gap:10px;"></div>
+        <button class="parc-nav-btn" id="parcNext2">&#8594;</button>
+      </div>
     </section>
     <section class="secao" id="sobre">
       <div class="secao-header"><h2 class="secao-titulo">Sobre Nós</h2><div class="secao-linha"></div></div>
@@ -511,9 +518,19 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
       Array.from(dotsWrap.querySelectorAll('.parc-dot')).forEach(function(d,i){ d.className = 'parc-dot' + (i===idx?' ativo':''); });
       if(btnPrev) btnPrev.disabled = idx === 0;
       if(btnNext) btnNext.disabled = idx >= getPages() - 1;
+      var bp2 = document.getElementById('parcPrev2');
+      var bn2 = document.getElementById('parcNext2');
+      if(bp2) bp2.disabled = idx === 0;
+      if(bn2) bn2.disabled = idx >= getPages() - 1;
     }
     if(btnPrev) btnPrev.addEventListener('click', function(){ goTo(idx - 1); });
     if(btnNext) btnNext.addEventListener('click', function(){ goTo(idx + 1); });
+    setTimeout(function(){
+      var bp2 = document.getElementById('parcPrev2');
+      var bn2 = document.getElementById('parcNext2');
+      if(bp2) bp2.addEventListener('click', function(){ goTo(idx - 1); });
+      if(bn2) bn2.addEventListener('click', function(){ goTo(idx + 1); });
+    }, 200);
     buildDots();
     setTimeout(function(){ goTo(0); }, 150);
     window.addEventListener('resize', function(){ if(window.innerWidth<=900){ grid.style.transform=''; } else { goTo(idx); } });
