@@ -117,10 +117,15 @@
      DESKTOP ONLY (min-width:901px) — NÃO afeta mobile
      ==================================================== */
     @media(min-width:901px){
-      #parcGrid{overflow:hidden;display:flex;flex-direction:row;gap:16px;scroll-snap-type:none;padding-bottom:0;transition:transform 0.4s ease;}
+      .parc-wrap{overflow:hidden;position:relative;}
+      #parcGrid{display:flex;flex-direction:row;gap:16px;scroll-snap-type:none;padding-bottom:0;transition:transform 0.4s ease;will-change:transform;}
       #parcGrid .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);flex-shrink:0;scroll-snap-align:none;}
       .carrossel-hint{display:none;}
-      .parc-dots{display:flex;justify-content:center;gap:10px;margin-top:20px;}
+      .parc-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;}
+      .parc-btn{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1.5px solid var(--dourado);color:var(--dourado);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;flex-shrink:0;}
+      .parc-btn:hover{background:var(--dourado);color:#fff;}
+      .parc-btn:disabled{opacity:0.3;cursor:default;}
+      .parc-dots{display:flex;gap:10px;}
       .parc-dot{width:10px;height:10px;border-radius:50%;background:var(--cinza-claro);border:none;cursor:pointer;padding:0;transition:background 0.2s;}
       .parc-dot.ativo{background:var(--dourado);}
     }
@@ -284,6 +289,7 @@
       <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
       <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
       <p class="carrossel-hint">Deslize para ver todos →</p>
+      <div class="parc-wrap">
       <div class="livros-grid livros-grid--carrossel" id="parcGrid">
 
         <div class="livro-card">
@@ -398,7 +404,12 @@
           </div>
         </a>
       </div>
-      <div class="parc-dots" id="parcDots"></div>
+      </div>
+      <div class="parc-nav">
+        <button class="parc-btn" id="parcPrev" disabled>&#8592;</button>
+        <div class="parc-dots" id="parcDots"></div>
+        <button class="parc-btn" id="parcNext">&#8594;</button>
+      </div>
     </section>
     <section class="secao" id="sobre">
       <div class="secao-header"><h2 class="secao-titulo">Sobre Nós</h2><div class="secao-linha"></div></div>
@@ -473,6 +484,8 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
     if(window.innerWidth <= 900) return;
     var grid = document.getElementById('parcGrid');
     var dotsWrap = document.getElementById('parcDots');
+    var btnPrev = document.getElementById('parcPrev');
+    var btnNext = document.getElementById('parcNext');
     if(!grid || !dotsWrap) return;
     var VIS = 4;
     var idx = 0;
@@ -494,11 +507,15 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
       idx = Math.max(0, Math.min(page, getPages() - 1));
       var w = cards[0] ? cards[0].offsetWidth + 16 : 0;
       grid.style.transform = 'translateX(-' + (idx * VIS * w) + 'px)';
-      Array.from(dotsWrap.querySelectorAll('.parc-dot')).forEach(function(d, i){ d.className = 'parc-dot' + (i === idx ? ' ativo' : ''); });
+      Array.from(dotsWrap.querySelectorAll('.parc-dot')).forEach(function(d,i){ d.className = 'parc-dot' + (i===idx?' ativo':''); });
+      if(btnPrev) btnPrev.disabled = idx === 0;
+      if(btnNext) btnNext.disabled = idx >= getPages() - 1;
     }
+    if(btnPrev) btnPrev.addEventListener('click', function(){ goTo(idx - 1); });
+    if(btnNext) btnNext.addEventListener('click', function(){ goTo(idx + 1); });
     buildDots();
-    goTo(0);
-    window.addEventListener('resize', function(){ if(window.innerWidth <= 900){ grid.style.transform=''; dotsWrap.style.display='none'; } else { dotsWrap.style.display='flex'; goTo(idx); } });
+    setTimeout(function(){ goTo(0); }, 150);
+    window.addEventListener('resize', function(){ if(window.innerWidth<=900){ grid.style.transform=''; } else { goTo(idx); } });
   })();
 </script>
 </body>
