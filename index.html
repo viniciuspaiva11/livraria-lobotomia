@@ -121,11 +121,12 @@
       #parcGrid{display:flex;flex-direction:row;gap:16px;scroll-snap-type:none;padding-bottom:0;transition:transform 0.4s ease;will-change:transform;}
       #parcGrid .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);flex-shrink:0;scroll-snap-align:none;}
       .carrossel-hint{display:none;}
-      .parc-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px;}
-      .parc-btn{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1.5px solid var(--dourado);color:var(--dourado);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;flex-shrink:0;}
+      .parc-btn{width:36px;height:36px;border-radius:50%;background:var(--bg);border:1.5px solid var(--dourado);color:var(--dourado);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,color 0.2s;position:absolute;top:35%;transform:translateY(-50%);z-index:5;}
       .parc-btn:hover{background:var(--dourado);color:#fff;}
-      .parc-btn:disabled{opacity:0.3;cursor:default;}
-      .parc-dots{display:flex;gap:10px;}
+      .parc-btn:disabled{opacity:0.3;cursor:default;pointer-events:none;}
+      #parcPrev{left:-44px;}
+      #parcNext{right:-44px;}
+      .parc-nav{display:flex;justify-content:center;gap:10px;margin-top:16px;}
       .parc-dot{width:10px;height:10px;border-radius:50%;background:var(--cinza-claro);border:none;cursor:pointer;padding:0;transition:background 0.2s;}
       .parc-dot.ativo{background:var(--dourado);}
     }
@@ -289,6 +290,7 @@
       <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
       <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
       <p class="carrossel-hint">Deslize para ver todos →</p>
+      <div style="position:relative;">
       <div class="parc-wrap">
       <div class="livros-grid livros-grid--carrossel" id="parcGrid">
 
@@ -405,11 +407,10 @@
         </a>
       </div>
       </div>
-      <div class="parc-nav">
-        <button class="parc-btn" id="parcPrev" disabled>&#8592;</button>
-        <div class="parc-dots" id="parcDots"></div>
-        <button class="parc-btn" id="parcNext">&#8594;</button>
+      <button class="parc-btn" id="parcPrev" disabled>&#8592;</button>
+      <button class="parc-btn" id="parcNext">&#8594;</button>
       </div>
+      <div class="parc-nav" id="parcDots"></div>
     </section>
     <section class="secao" id="sobre">
       <div class="secao-header"><h2 class="secao-titulo">Sobre Nós</h2><div class="secao-linha"></div></div>
