@@ -53,6 +53,17 @@
     nav.menu-mobile{display:none;}
     footer{border-top:0.5px solid var(--cinza-claro);padding:24px 56px;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);}
 
+    .cta-cadastro{border:1px solid var(--dourado);border-radius:3px;padding:32px 36px;background:rgba(201,168,108,0.04);margin-top:40px;}
+    .cta-cadastro__tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dourado);border:1px solid var(--dourado);padding:3px 10px;border-radius:2px;margin-bottom:16px;}
+    .cta-cadastro__titulo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--texto);line-height:1.35;margin-bottom:10px;}
+    .cta-cadastro__texto{font-size:0.83rem;color:var(--cinza);line-height:1.65;margin-bottom:24px;}
+    .cta-form{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;}
+    .cta-form__field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:150px;}
+    .cta-form__field label{font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);}
+    .cta-form__field input{border:1px solid var(--cinza-claro);border-radius:2px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:0.85rem;background:var(--bg);color:var(--texto);outline:none;height:40px;}
+    .cta-form__btn{background:var(--dourado);color:#fff;border:none;padding:0 24px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px;height:40px;white-space:nowrap;}
+    .cta-form__btn:hover{opacity:0.85;}
+    .cta-form__aviso{font-size:0.65rem;color:#aaa;margin-top:10px;width:100%;line-height:1.5;}
     /* MOBILE */
     @media(max-width:900px){
       .menu-mobile-btn{display:flex;}
@@ -118,6 +129,23 @@
             <p>Fim do Mundo em Sessenta Segundos parte das teses do filósofo Nick Bostrom e de algumas das mentes mais rigorosas do mundo aplicadas a uma questão que a humanidade talvez não tenha tempo suficiente para responder direito. O livro não pergunta se a inteligência artificial vai nos destruir. Essa resposta Hollywood já deu, com efeitos especiais e trilha sonora.</p>
             <p>A pergunta real é outra. Mais difícil. E muito mais inquietante.</p>
           </div>
+          <div class="cta-cadastro">
+            <span class="cta-cadastro__tag">Previsão: junho / 2026</span>
+            <h3 class="cta-cadastro__titulo">Seja o primeiro a saber e garanta um desconto exclusivo no lançamento.</h3>
+            <p class="cta-cadastro__texto">Deixa seu contato e te avisamos no dia em que sair — com condição especial de lançamento: de R$87 por R$67.</p>
+            <div class="cta-form">
+              <div class="cta-form__field">
+                <label>Nome</label>
+                <input type="text" id="cta-nome" placeholder="Seu nome"/>
+              </div>
+              <div class="cta-form__field">
+                <label>Telefone / WhatsApp</label>
+                <input type="text" id="cta-tel" placeholder="(11) 99999-9999"/>
+              </div>
+              <button class="cta-form__btn" id="cta-btn">Quero ser avisado</button>
+              <span class="cta-form__aviso">Ao clicar, seu app de e-mail abrirá com seus dados para envio à Livraria Lobotomia.</span>
+            </div>
+          </div>
           <div class="em-breve-box">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             Em breve pela Livraria Lobotomia
@@ -136,6 +164,14 @@
     function fecharMenu(){document.getElementById('menuMobile').classList.remove('aberto');}
     document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('menuMobile').classList.toggle('aberto');});
     document.getElementById('menuFechar').addEventListener('click',fecharMenu);
+  document.getElementById('cta-btn').addEventListener('click', function(){
+    var nome = document.getElementById('cta-nome').value.trim();
+    var tel = document.getElementById('cta-tel').value.trim();
+    if(!nome && !tel){ alert('Preencha ao menos seu nome ou telefone.'); return; }
+    var corpo = 'Nome: ' + (nome || '—') + '%0ATelefone: ' + (tel || '—') + '%0A%0AInteresse: Lista de espera — O Fim do Mundo em Sessenta Segundos';
+    var assunto = 'Lista de espera — Sessenta Segundos';
+    window.location.href = 'mailto:contato@livrarialobotomia.com.br?subject=' + encodeURIComponent(assunto) + '&body=' + corpo;
+  });
   </script>
 </body>
 </html>
