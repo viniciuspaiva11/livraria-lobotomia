@@ -163,8 +163,13 @@
     .wpp-float { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; background: var(--verde-wpp); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
     .wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
     @media (max-width: 640px) { .hero__inner { grid-template-columns: 1fr; } .hero__capa { display: none; } .para-quem-grid { grid-template-columns: 1fr; } .autor-bloco { grid-template-columns: 1fr; } .autor-avatar { display: none; } }
-  .voltar-livraria{display:inline-block;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;text-decoration:none;background:#C9A86C;border:none;border-radius:3px;margin:0;transition:opacity 0.2s;}
+  .voltar-livraria{display:inline-block;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;text-decoration:none;background:#C9A86C;border:none;border-radius:0;margin:0;transition:opacity 0.2s;}
   .voltar-livraria:hover{opacity:0.85;}
+  .capa-mobile-wrap{display:none;}
+  @media(max-width:768px){
+    .capa-mobile-wrap{display:block;text-align:center;padding:24px 16px 0;}
+    .capa-mobile{max-width:260px;width:80%;border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+  }
 </style>
 </head>
 <body>
@@ -196,6 +201,7 @@
         </div>
       </div>
     </div>
+    <div class="capa-mobile-wrap"><img src="/xpassarinho/capa2.jpg" alt="X-Passarinho" class="capa-mobile"/></div>
     <div class="hero__strip"><div class="container"><div class="stats"><div class="stat"><span class="stat__num">20M+</span><span class="stat__label">brasileiros no X</span></div><div class="stat"><span class="stat__num">30</span><span class="stat__label">estratégias revisadas</span></div><div class="stat"><span class="stat__num">2026</span><span class="stat__label">dados atualizados</span></div><div class="stat"><span class="stat__num">7 dias</span><span class="stat__label">garantia total</span></div></div></div></div>
   </section>
   <section class="secao secao--escura"><div class="container" style="text-align:center;"><span class="secao__tag">Uma palavra do autor</span><h2 class="secao__titulo">Vinícius, da Livraria Lobotomia,<br>explica em 1 minuto</h2><p class="secao__subtitulo" style="margin:0 auto 40px;">Por que este livro existe, para quem é, e o que muda depois que você lê.</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/Pdg7t-ZQirw?rel=0&modestbranding=1" title="X-Passarinho — Uma palavra do autor" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div></section>
