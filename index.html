@@ -114,6 +114,17 @@
       .ver-todos-info{padding:12px;}
       .ver-todos-label{display:block;padding:10px 0;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:var(--dourado);border:none;text-align:center;}
       /* ====================================================
+     DESKTOP ONLY (min-width:901px) — NÃO afeta mobile
+     ==================================================== */
+    @media(min-width:901px){
+      #parcGrid{overflow:hidden;display:flex;flex-direction:row;gap:16px;scroll-snap-type:none;padding-bottom:0;transition:transform 0.4s ease;}
+      #parcGrid .livro-card{min-width:calc(25% - 12px);max-width:calc(25% - 12px);flex-shrink:0;scroll-snap-align:none;}
+      .carrossel-hint{display:none;}
+      .parc-dots{display:flex;justify-content:center;gap:10px;margin-top:20px;}
+      .parc-dot{width:10px;height:10px;border-radius:50%;background:var(--cinza-claro);border:none;cursor:pointer;padding:0;transition:background 0.2s;}
+      .parc-dot.ativo{background:var(--dourado);}
+    }
+    /* ====================================================
      MOBILE ONLY (max-width:900px)
      Regras aqui SOBRESCREVEM desktop.
      Para desktop: usar @media(min-width:901px) FORA deste bloco.
@@ -273,7 +284,7 @@
       <div class="secao-header"><h2 class="secao-titulo">Publicações Parceiras</h2><div class="secao-linha"></div></div>
       <div class="em-breve-box" style="border:none;background:none;padding:0;margin-bottom:24px;"><div><h3 class="em-breve-titulo">Obras e vozes de fora do selo</h3><p class="em-breve-sub">Publicações de outros autores e ambientes que compartilham nossa curadoria, sem concessões editoriais</p></div></div>
       <p class="carrossel-hint">Deslize para ver todos →</p>
-      <div class="livros-grid livros-grid--carrossel">
+      <div class="livros-grid livros-grid--carrossel" id="parcGrid">
 
         <div class="livro-card">
           <a href="https://go.hotmart.com/M105846850S" target="_blank"><img src="/parceiros/protocolo-antiotario.png" alt="Protocolo Antiotário" class="livro-capa"/></a>
@@ -387,6 +398,7 @@
           </div>
         </a>
       </div>
+      <div class="parc-dots" id="parcDots"></div>
     </section>
     <section class="secao" id="sobre">
       <div class="secao-header"><h2 class="secao-titulo">Sobre Nós</h2><div class="secao-linha"></div></div>
@@ -456,6 +468,38 @@ function fecharMenu(){document.getElementById('menuOverlay').classList.remove('a
     dots.forEach(function(d,i){ d.className = 'carrossel-dot' + (i===idx?' ativo':''); });
   }, {passive:true});
 })();
+  // Carrossel desktop parceiros — só ativa acima de 900px
+  (function(){
+    if(window.innerWidth <= 900) return;
+    var grid = document.getElementById('parcGrid');
+    var dotsWrap = document.getElementById('parcDots');
+    if(!grid || !dotsWrap) return;
+    var VIS = 4;
+    var idx = 0;
+    function getCards(){ return Array.from(grid.querySelectorAll('.livro-card')); }
+    function getPages(){ return Math.ceil(getCards().length / VIS); }
+    function buildDots(){
+      dotsWrap.innerHTML = '';
+      var pages = getPages();
+      for(var i = 0; i < pages; i++){
+        var d = document.createElement('button');
+        d.className = 'parc-dot' + (i === 0 ? ' ativo' : '');
+        d.setAttribute('data-i', i);
+        d.addEventListener('click', function(){ goTo(parseInt(this.getAttribute('data-i'))); });
+        dotsWrap.appendChild(d);
+      }
+    }
+    function goTo(page){
+      var cards = getCards();
+      idx = Math.max(0, Math.min(page, getPages() - 1));
+      var w = cards[0] ? cards[0].offsetWidth + 16 : 0;
+      grid.style.transform = 'translateX(-' + (idx * VIS * w) + 'px)';
+      Array.from(dotsWrap.querySelectorAll('.parc-dot')).forEach(function(d, i){ d.className = 'parc-dot' + (i === idx ? ' ativo' : ''); });
+    }
+    buildDots();
+    goTo(0);
+    window.addEventListener('resize', function(){ if(window.innerWidth <= 900){ grid.style.transform=''; dotsWrap.style.display='none'; } else { dotsWrap.style.display='flex'; goTo(idx); } });
+  })();
 </script>
 </body>
 </html>
