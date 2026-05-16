@@ -28,7 +28,7 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     :root{--bg:#f0ede6;--preto:#1a1a18;--dourado:#C9A86C;--cinza:#888780;--cinza-claro:#d3d1c7;--texto:#2c2c2a;--nav-w:220px;--side-w:390px;}
-    html{font-size:18px;}
+    html{font-size:18px;scroll-padding-top:160px;}
     body{background:var(--bg);color:var(--texto);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
     .barra-topo{width:100%;background:var(--bg);border-bottom:0.5px solid var(--cinza-claro);display:flex;align-items:center;justify-content:center;padding:16px 0;position:sticky;top:0;z-index:100;}
     .ads-topo{width:728px;height:135px;border:1px dashed var(--cinza);display:flex;align-items:center;justify-content:center;background:rgba(136,135,128,0.04);}
@@ -139,6 +139,7 @@
      Para desktop: usar @media(min-width:901px) FORA deste bloco.
      ==================================================== */
     @media(max-width:900px){
+      .parc-btn,.parc-nav-btn,.parc-nav{display:none!important;}
       .menu-mobile-btn{top:14px;}.hero-slogan-row{display:flex;align-items:center;justify-content:center;gap:12px;}.hero-slogan-row .menu-mobile-btn{position:static;display:flex;}
       nav.sidebar{display:none;}
       aside.anunciantes{display:none;}
