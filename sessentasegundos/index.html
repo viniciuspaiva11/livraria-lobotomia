@@ -222,5 +222,25 @@
     document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('menuMobile').classList.toggle('aberto');});
     document.getElementById('menuFechar').addEventListener('click',fecharMenu);
   </script>
+  <!-- Tracking: CTA clicks, scroll depth, engagement -->
+  <script>
+  (function(){
+    function t(n,p){if(typeof gtag==="function")gtag("event",n,p||{});}
+    function f(n,p){if(typeof fbq==="function")fbq("track",n,p||{});}
+    document.querySelectorAll('a[href*="hotmart"]').forEach(function(a){
+      a.addEventListener("click",function(){
+        var l=a.className||a.id||"cta";
+        t("begin_checkout",{event_label:l,link_url:a.href,value:67,currency:"BRL",items:[{item_id:"sessenta_segundos",item_name:"O Fim do Mundo em Sessenta Segundos",price:67,quantity:1}]});
+        f("InitiateCheckout",{content_name:"Sessenta Segundos",content_ids:["sessenta_segundos"],value:67,currency:"BRL"});
+      });
+    });
+    var sd={};
+    window.addEventListener("scroll",function(){
+      var h=document.documentElement,p=Math.round((h.scrollTop+window.innerHeight)/h.scrollHeight*100);
+      [50,90].forEach(function(d){if(!sd[d]&&p>=d){sd[d]=1;t("scroll",{percent_scrolled:d});}});
+    },{passive:true});
+    setTimeout(function(){t("engaged_session",{engagement_time_msec:30000});f("ViewContent",{content_name:"Sessenta Segundos",content_ids:["sessenta_segundos"]});},30000);
+  })();
+  </script>
 </body>
 </html>
