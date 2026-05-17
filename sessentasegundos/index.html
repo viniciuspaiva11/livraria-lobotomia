@@ -61,6 +61,9 @@
     .btn-cta{display:inline-block;background:var(--laranja);color:var(--preto);font-family:'Inter Tight',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 40px;text-decoration:none;transition:background 0.2s;}
     .btn-cta:hover{background:#e55a24;}
     .hero__lancamento{margin-top:14px;font-size:0.75rem;color:var(--cinza-medio);}
+    .cta-avise{margin-top:12px;}
+    .link-avise{font-size:0.8rem;color:var(--cinza-medio);font-style:italic;text-decoration:underline;}
+    .link-avise:hover{color:var(--cinza-claro);}
 
     /* DIVISOR */
     .divisor{border:none;border-top:1px solid var(--borda);max-width:1100px;margin:0 auto;}
@@ -134,6 +137,7 @@
       </div>
       <a href="https://pay.hotmart.com/H105866919K?off=sm2q2v3p" class="btn-cta">Garantir minha cópia</a>
       <p class="hero__lancamento">Entrega automática por e-mail em 30/05/2026 · PDF e EPUB</p>
+      <p class="cta-avise"><a href="https://wa.me/5511947655783?text=Quero%20ser%20avisado(a)%20sobre%20O%20Fim%20do%20Mundo%20em%20Sessenta%20Segundos" class="link-avise">Prefere ser avisado(a) no lançamento? Clique aqui (WhatsApp)</a></p>
     </div>
   </section>
 
@@ -185,6 +189,7 @@
       <a href="https://pay.hotmart.com/H105866919K?off=sm2q2v3p" class="btn-cta">Comprar agora — R$&nbsp;67</a>
       <a href="https://wa.me/5511947655783?text=Ol%C3%A1%2C+tenho+interesse+no+livro+O+Fim+do+Mundo+em+Sessenta+Segundos" class="btn-cta-secundario">Falar pelo WhatsApp</a>
     </div>
+      <p class="cta-avise"><a href="https://wa.me/5511947655783?text=Quero%20ser%20avisado(a)%20sobre%20O%20Fim%20do%20Mundo%20em%20Sessenta%20Segundos" class="link-avise">Prefere ser avisado(a) no lançamento? Clique aqui (WhatsApp)</a></p>
   </div>
 
   <!-- FOOTER -->
@@ -217,7 +222,15 @@
       [50,90].forEach(function(d){if(!sd[d]&&p>=d){sd[d]=1;t("scroll",{percent_scrolled:d});}});
     },{passive:true});
     setTimeout(function(){t("engaged_session",{engagement_time_msec:30000});f("ViewContent",{content_name:"Sessenta Segundos",content_ids:["sessenta_segundos"]});},30000);
-  })();
+  
+  // Tracking: WhatsApp avise-me
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(typeof gtag!=='undefined') gtag('event','lead_whatsapp',{event_label:'sessenta_segundos_avise_me'});
+      if(typeof fbq!=='undefined') fbq('track','Lead',{content_name:'Sessenta Segundos avise-me'});
+    });
+  });
+})();
   </script>
 
 </body>
