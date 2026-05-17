@@ -14,6 +14,17 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js',new Date());gtag('config','G-JF2H6X0RD1');
   </script>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1834320934116107');
+  fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1834320934116107&ev=PageView&noscript=1"/></noscript>
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     :root{--bg:#f0ede6;--preto:#1a1a18;--dourado:#C9A86C;--cinza:#888780;--cinza-claro:#d3d1c7;--texto:#2c2c2a;--nav-w:220px;--side-w:390px;}
@@ -210,14 +221,6 @@
     function fecharMenu(){document.getElementById('menuMobile').classList.remove('aberto');}
     document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('menuMobile').classList.toggle('aberto');});
     document.getElementById('menuFechar').addEventListener('click',fecharMenu);
-  document.getElementById('cta-btn').addEventListener('click', function(){
-    var nome = document.getElementById('cta-nome').value.trim();
-    var tel = document.getElementById('cta-tel').value.trim();
-    if(!nome && !tel){ alert('Preencha ao menos seu nome ou telefone.'); return; }
-    var corpo = 'Nome: ' + (nome || '—') + '%0ATelefone: ' + (tel || '—') + '%0A%0AInteresse: Lista de espera — O Fim do Mundo em Sessenta Segundos';
-    var assunto = 'Lista de espera — Sessenta Segundos';
-    window.location.href = 'mailto:contato@livrarialobotomia.com.br?subject=' + encodeURIComponent(assunto) + '&body=' + corpo;
-  });
   </script>
 </body>
 </html>
