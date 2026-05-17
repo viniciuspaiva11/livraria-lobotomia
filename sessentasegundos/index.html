@@ -4,10 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>O Fim do Mundo em Sessenta Segundos — Livraria Lobotomia</title>
-  <meta name="description" content="O apocalipse que Hollywood filmou é o segundo cenário mais assustador. Por Bouquard Lobo. Em breve pela Livraria Lobotomia."/>
+  <meta name="description" content="Um guia de leitura sobre o cenário que ninguém comentou. Por Bouquard Lobo. Pré-venda R$67."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF2H6X0RD1"></script>
   <script>
     window.dataLayer=window.dataLayer||[];
@@ -27,195 +27,172 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1834320934116107&ev=PageView&noscript=1"/></noscript>
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
-    :root{--bg:#f0ede6;--preto:#1a1a18;--dourado:#C9A86C;--cinza:#888780;--cinza-claro:#d3d1c7;--texto:#2c2c2a;--nav-w:220px;--side-w:390px;}
-    html{font-size:18px;scroll-padding-top:160px;}
-    body{background:var(--bg);color:var(--texto);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
-    .barra-topo{width:100%;background:var(--bg);border-bottom:0.5px solid var(--cinza-claro);display:flex;align-items:center;justify-content:center;padding:16px 0;position:sticky;top:0;z-index:100;}
-    .ads-topo{width:728px;height:135px;border:1px dashed var(--cinza);display:flex;align-items:center;justify-content:center;background:rgba(136,135,128,0.04);}
-    .ads-topo span{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);}
-    .layout{display:grid;grid-template-columns:var(--nav-w) 1fr var(--side-w);min-height:100vh;}
-    nav.sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;padding:32px 24px;border-right:0.5px solid var(--cinza-claro);display:flex;flex-direction:column;gap:32px;}
-    .nav-logo img{width:100%;max-width:140px;}
-    .nav-links{display:flex;flex-direction:column;gap:6px;}
-    .nav-links a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:3px;text-decoration:none;color:var(--cinza);font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;transition:color 0.2s,background 0.2s;}
-    .nav-links a:hover,.nav-links a.ativo{color:var(--texto);background:rgba(201,168,108,0.08);}
-    .nav-links a svg{width:16px;height:16px;flex-shrink:0;}
-    .nav-footer{margin-top:auto;display:flex;gap:12px;}
-    .nav-footer a{color:var(--cinza);transition:color 0.2s;}
-    .nav-footer a:hover{color:var(--dourado);}
-    main.conteudo{padding:48px 56px;max-width:860px;}
-    .voltar{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);text-decoration:none;margin-bottom:40px;transition:color 0.2s;}
-    .voltar:hover{color:var(--dourado);}
-    .livro-hero{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start;margin-bottom:56px;}
-    .livro-hero__capa{width:100%;}
-    .livro-hero__capa img{width:100%;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,0.2);}
-    .livro-hero__info{padding-top:8px;}
-    .livro-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--dourado);padding:3px 10px;border-radius:2px;margin-bottom:16px;}
-    .livro-autor{font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);margin-bottom:12px;}
-    .livro-titulo{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;line-height:1.1;font-style:italic;margin-bottom:24px;}
-    .livro-desc{font-size:1rem;line-height:1.8;color:var(--texto);margin-bottom:32px;}
-    .livro-desc p{margin-bottom:1.2em;}
-    .livro-desc p:last-child{margin-bottom:0;}
-    .em-breve-box{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border:1px solid var(--dourado);border-radius:3px;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--dourado);}
-    aside.anunciantes{width:var(--side-w);padding:24px;border-left:0.5px solid var(--cinza-claro);display:flex;flex-direction:column;gap:32px;position:fixed;top:167px;right:0;height:calc(100vh - 167px);overflow-y:auto;background:var(--bg);}
-    .aside-bloco{border:1px dashed var(--cinza-claro);border-radius:3px;padding:24px;display:flex;align-items:center;justify-content:center;min-height:160px;}
-    .aside-bloco span{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);}
-    .menu-mobile-btn{display:none;}
-    nav.menu-mobile{display:none;}
-    footer{border-top:0.5px solid var(--cinza-claro);padding:24px 56px;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);}
+    :root{
+      --preto:#000000;
+      --grafite:#1A1A1A;
+      --laranja:#FF6B35;
+      --branco:#FFFFFF;
+      --cinza-medio:#888888;
+      --cinza-claro:#CCCCCC;
+      --borda:#2A2A2A;
+    }
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{background:var(--preto);color:var(--branco);font-family:'Inter Tight',Helvetica,Arial,sans-serif;line-height:1.6;}
 
-    .cta-cadastro{border:1px solid var(--dourado);border-radius:3px;padding:32px 36px;background:rgba(201,168,108,0.04);margin-top:40px;}
-    .cta-cadastro__tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dourado);border:1px solid var(--dourado);padding:3px 10px;border-radius:2px;margin-bottom:16px;}
-    .cta-cadastro__titulo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--texto);line-height:1.35;margin-bottom:10px;}
-    .cta-cadastro__texto{font-size:0.83rem;color:var(--cinza);line-height:1.65;margin-bottom:24px;}
-    .cta-form{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;}
-    .cta-form__field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:150px;}
-    .cta-form__field label{font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza);}
-    .cta-form__field input{border:1px solid var(--cinza-claro);border-radius:2px;padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:0.85rem;background:var(--bg);color:var(--texto);outline:none;height:40px;}
-    .cta-form__btn{background:#c0392b;color:#fff;border:none;padding:0 24px;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px;height:40px;white-space:nowrap;}
-    .cta-form__btn:hover{opacity:0.85;}
-    .cta-form__aviso{font-size:0.65rem;color:#aaa;margin-top:10px;width:100%;line-height:1.5;}
-    .cta-cadastro__texto strong{font-weight:700!important;}
+    /* BARRA TOPO */
+    .barra-topo{background:var(--grafite);border-bottom:1px solid var(--borda);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;}
+    .barra-topo a{color:var(--cinza-claro);font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;}
+    .barra-topo a:hover{color:var(--laranja);}
+    .barra-logo{height:28px;opacity:0.9;}
+
+    /* HERO */
+    .hero{max-width:1100px;margin:0 auto;padding:80px 24px 60px;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;}
+    .hero__capa{position:relative;}
+    .hero__capa img{width:100%;max-width:360px;display:block;box-shadow:0 24px 80px rgba(255,107,53,0.15);}
+    .hero__info{}
+    .hero__tag{display:inline-block;background:var(--laranja);color:var(--preto);font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;margin-bottom:20px;}
+    .hero__titulo{font-size:2.6rem;font-weight:900;line-height:1.1;letter-spacing:-0.5px;margin-bottom:8px;}
+    .hero__autor{font-size:0.8rem;color:var(--cinza-medio);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;}
+    .hero__tagline{font-size:1.05rem;color:var(--cinza-claro);line-height:1.65;margin-bottom:32px;max-width:420px;}
+    .hero__preco{display:flex;align-items:baseline;gap:12px;margin-bottom:28px;}
+    .hero__preco-atual{font-size:2rem;font-weight:900;color:var(--laranja);}
+    .hero__preco-original{font-size:1rem;color:var(--cinza-medio);text-decoration:line-through;}
+    .hero__preco-detalhe{font-size:0.75rem;color:var(--cinza-medio);}
+    .btn-cta{display:inline-block;background:var(--laranja);color:var(--preto);font-family:'Inter Tight',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 40px;text-decoration:none;transition:background 0.2s;}
+    .btn-cta:hover{background:#e55a24;}
+    .hero__lancamento{margin-top:14px;font-size:0.75rem;color:var(--cinza-medio);}
+
+    /* DIVISOR */
+    .divisor{border:none;border-top:1px solid var(--borda);max-width:1100px;margin:0 auto;}
+
+    /* SINOPSE */
+    .sinopse{max-width:680px;margin:0 auto;padding:72px 24px;}
+    .sinopse__titulo{font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--laranja);margin-bottom:28px;}
+    .sinopse p{font-size:1rem;color:#DDDDDD;line-height:1.8;margin-bottom:20px;}
+    .sinopse__citacoes{margin-top:32px;padding:24px 0;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);}
+    .sinopse__citacoes p{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:0.95rem;color:var(--cinza-claro);line-height:1.7;margin-bottom:0;}
+
+    /* AUTOR */
+    .autor{max-width:680px;margin:0 auto;padding:0 24px 72px;}
+    .autor__titulo{font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cinza-medio);margin-bottom:20px;}
+    .autor__bio{font-size:0.95rem;color:#CCCCCC;line-height:1.75;}
+
+    /* FAQ */
+    .faq{max-width:680px;margin:0 auto;padding:0 24px 72px;}
+    .faq__titulo{font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--laranja);margin-bottom:28px;}
+    .faq__item{border-bottom:1px solid var(--borda);padding:18px 0;}
+    .faq__pergunta{font-size:0.9rem;font-weight:700;color:var(--branco);margin-bottom:8px;}
+    .faq__resposta{font-size:0.88rem;color:#BBBBBB;line-height:1.65;}
+
+    /* CTA FINAL */
+    .cta-final{background:var(--grafite);border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);padding:80px 24px;text-align:center;}
+    .cta-final__titulo{font-size:1.8rem;font-weight:900;margin-bottom:12px;line-height:1.2;}
+    .cta-final__sub{font-size:0.95rem;color:var(--cinza-claro);margin-bottom:32px;}
+    .cta-final__btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center;}
+    .btn-cta-secundario{display:inline-block;border:1px solid var(--branco);color:var(--branco);font-family:'Inter Tight',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;text-decoration:none;transition:all 0.2s;}
+    .btn-cta-secundario:hover{background:var(--branco);color:var(--preto);}
+
+    /* FOOTER */
+    .footer{padding:40px 24px;text-align:center;border-top:1px solid var(--borda);}
+    .footer__logo{height:36px;opacity:0.7;margin-bottom:16px;}
+    .footer__copy{font-size:0.75rem;color:var(--cinza-medio);}
+
     /* MOBILE */
     @media(max-width:900px){
-      .menu-mobile-btn{display:flex;}
-      .menu-mobile{display:flex;flex-direction:column;}
       .barra-topo{display:none;}
-      .layout{display:block;}
-      nav.sidebar{display:none;}
-      aside.anunciantes{display:none;}
-      main.conteudo{padding:24px 20px;}
-      .livro-hero{grid-template-columns:1fr;gap:32px;}
-      .livro-hero__capa{max-width:260px;margin:0 auto;}
-      .livro-titulo{font-size:1.8rem;}
-      footer{padding:20px;}
-      .menu-mobile-btn{display:none;position:fixed;top:14px;left:14px;z-index:300;background:var(--bg);border:0.5px solid var(--cinza-claro);border-radius:4px;padding:9px 11px;cursor:pointer;flex-direction:column;gap:4px;}
-      .menu-mobile-btn span{width:18px;height:1.5px;background:var(--texto);display:block;}
-      .menu-mobile{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:200;padding:80px 32px 32px;flex-direction:column;gap:8px;}
-      .menu-mobile.aberto{display:flex;}
-      .menu-mobile a{display:block;padding:12px 0;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;color:var(--texto);text-decoration:none;border-bottom:0.5px solid var(--cinza-claro);}
-      .menu-fechar{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;font-size:1.4rem;color:var(--texto);}
+      .hero{grid-template-columns:1fr;gap:40px;padding:40px 20px;}
+      .hero__capa img{max-width:260px;margin:0 auto;}
+      .hero__titulo{font-size:1.8rem;}
+      .sinopse,.autor,.faq{padding-left:20px;padding-right:20px;}
+      .cta-final{padding:60px 20px;}
+      .cta-final__titulo{font-size:1.4rem;}
     }
-  
-    /* === SESSENTA SEGUNDOS — blocos novos === */
-    .ss-credibilidade{font-size:0.82rem;color:var(--cinza);line-height:1.7;border-left:2px solid var(--dourado);padding:10px 16px;margin:20px 0 28px;background:rgba(201,168,108,0.04);}
-    .ss-credibilidade em{font-style:italic;}
-    .ss-conceitos{display:flex;flex-direction:column;gap:12px;margin:0 0 28px;}
-    .ss-conceito{border:1px solid var(--cinza-claro);border-radius:3px;padding:18px 20px;}
-    .ss-conceito--destaque{border-color:var(--dourado);background:rgba(201,168,108,0.06);}
-    .ss-conceito__titulo{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dourado);margin-bottom:6px;}
-    .ss-conceito__texto{font-size:0.85rem;color:var(--texto);line-height:1.65;}
-    .ss-cta-prevenda{text-align:center;margin:32px 0 12px;}
-    .ss-btn-prevenda{display:inline-block;background:var(--dourado);color:#1a1a18;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 36px;text-decoration:none;border-radius:2px;}
-    .ss-btn-prevenda:hover{background:#b8925a;}
-    .ss-cta-sub{text-align:center;font-size:0.78rem;color:var(--cinza);margin-top:10px;}
-    .ss-garantia{display:flex;align-items:center;gap:8px;justify-content:center;margin:16px 0 28px;font-size:0.82rem;color:var(--cinza);}
-    .ss-garantia__icone{color:var(--dourado);font-weight:700;font-size:1rem;}
-    .ss-faq{margin:0 0 28px;}
-    .ss-faq__titulo{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cinza);margin-bottom:14px;}
-    .ss-faq__item{border-bottom:1px solid var(--cinza-claro);padding:12px 0;}
-    .ss-faq__p{font-size:0.83rem;color:var(--texto);line-height:1.65;}
-    .ss-autor{border-top:1px solid var(--cinza-claro);padding-top:16px;margin-bottom:28px;}
-    .ss-autor__texto{font-size:0.82rem;color:var(--cinza);line-height:1.6;font-style:italic;}
-    .ss-autor__texto strong{font-style:normal;color:var(--texto);}
-</style>
+  </style>
 </head>
 <body>
-  <div class="barra-topo"><div class="ads-topo"><span>Anuncie Aqui</span></div></div>
-  <button class="menu-mobile-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
-  <nav class="menu-mobile" id="menuMobile">
-    <button class="menu-fechar" id="menuFechar">&#x2715;</button>
-    <a href="/" onclick="fecharMenu()">Início</a>
-    <a href="/#livros" onclick="fecharMenu()">Catálogo Autoral</a>
-    <a href="/#malditos" onclick="fecharMenu()">Autores Malditos</a>
-    <a href="/#parceiros" onclick="fecharMenu()">Publicações Parceiras</a>
-    <a href="/#sobre" onclick="fecharMenu()">Sobre Nós</a>
-    <a href="/#contatos" onclick="fecharMenu()">Contatos</a>
-  </nav>
-  <div class="layout">
-    <nav class="sidebar">
-      <div class="nav-logo"><img src="/logo.png" alt="Livraria Lobotomia"/></div>
-      <div class="nav-links">
-        <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Início</a>
-        <a href="/#livros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>Catálogo Autoral</a>
-        <a href="/#malditos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>Autores Malditos</a>
-        <a href="/#parceiros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>Publicações Parceiras</a>
-        <a href="/#sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Sobre Nós</a>
-        <a href="/#contatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Contatos</a>
-      </div>
-      <div class="nav-footer">
-        <a href="https://instagram.com/livrarialobotomia" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-        <a href="https://twitter.com/livrarialobotomia" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      </div>
-    </nav>
-    <main class="conteudo">
-      <a href="/" class="voltar">← Voltar à Livraria</a>
-      <div class="livro-hero">
-        <div class="livro-hero__capa">
-          <img src="/sessentasegundos/capa-sessenta-segundos.png" alt="O Fim do Mundo em Sessenta Segundos"/>
-        </div>
-        <div class="livro-hero__info">
-          <span class="livro-tag">Em breve</span>
-          <p class="livro-autor">Por Bouquard Lobo</p>
-          <h1 class="livro-titulo">O Fim do Mundo em Sessenta Segundos</h1>
-          <div class="livro-desc">
-            <p>Desde 1984, quando Skynet lançou os mísseis numa tela de cinema, a humanidade treinou seu medo no lugar errado. Existe outro cenário, mais silencioso e sem nenhum vilão identificável, que não aparece em nenhum filme de Hollywood porque não tem explosão, não tem dia D e não tem John Connor chegando no último segundo.</p>
-            <p>Fim do Mundo em Sessenta Segundos parte das teses do filósofo Nick Bostrom e de algumas das mentes mais rigorosas do mundo aplicadas a uma questão que a humanidade talvez não tenha tempo suficiente para responder direito. O livro não pergunta se a inteligência artificial vai nos destruir. Essa resposta Hollywood já deu, com efeitos especiais e trilha sonora.</p>
-            <p>A pergunta real é outra. Mais difícil. E muito mais inquietante.</p>
-          </div>
-          <!-- CREDIBILIDADE -->
-          <div class="ss-credibilidade">
-            <p>Diálogo com Nick Bostrom (<em>Superinteligência</em>), Jiang Xueqin (tecnomarxismo), Shoshana Zuboff (<em>Capitalismo de Vigilância</em>), Mark Fisher e a tradição da ficção científica.</p>
-          </div>
 
-          <!-- DOIS CONCEITOS -->
-          <div class="ss-conceitos">
-            <div class="ss-conceito">
-              <h3 class="ss-conceito__titulo">FIM DO MUNDO PRÓPRIO</h3>
-              <p class="ss-conceito__texto">Extinção, guerra autônoma, superinteligência hostil. O apocalipse imaginável — o que Hollywood filmou.</p>
-            </div>
-            <div class="ss-conceito ss-conceito--destaque">
-              <h3 class="ss-conceito__titulo">FIM DO MUNDO IMPRÓPRIO</h3>
-              <p class="ss-conceito__texto">O humano permanece vivo e o mundo funcionando, só que sem precisar de nós. A civilização como conhecemos colapsa pela inércia dos investimentos trilionários em IA e pela falha em frear externalidades a tempo. A tese central: esse cenário é mais provável, mais silencioso, e já pode estar em curso.</p>
-            </div>
-          </div>
-
-          <!-- CTA PRÉ-VENDA HOTMART -->
-          <div class="ss-cta-prevenda">
-            <a href="https://pay.hotmart.com/H105866919K?off=sm2q2v3p" class="ss-btn-prevenda">Reservar com 23% OFF — R$ 67</a>
-            <p class="ss-cta-sub">Lançamento 30 de maio. Entrega automática por e-mail.</p>
-          </div>
-
-          <!-- GARANTIA -->
-          <div class="ss-garantia">
-            <span class="ss-garantia__icone">✓</span>
-            <span class="ss-garantia__texto">Garantia incondicional de 7 dias — Hotmart</span>
-          </div>
-
-          <!-- FAQ -->
-          <div class="ss-faq">
-            <h3 class="ss-faq__titulo">Perguntas frequentes</h3>
-            <div class="ss-faq__item">
-              <p class="ss-faq__p"><strong>Quando recebo o livro?</strong><br/>Automaticamente no e-mail cadastrado, em 30/05/2026.</p>
-            </div>
-            <div class="ss-faq__item">
-              <p class="ss-faq__p"><strong>Em que formato?</strong><br/>PDF e EPUB.</p>
-            </div>
-            <div class="ss-faq__item">
-              <p class="ss-faq__p"><strong>E se eu não gostar?</strong><br/>Reembolso integral em 7 dias, sem perguntas (política Hotmart).</p>
-            </div>
-          </div>
-
-          </div>
-        </div>
-      </div>
-    </main>
-    <aside class="anunciantes">
-      <div class="aside-bloco"><span>Portal Audiências<br/>Inteligência Esportiva</span></div>
-      <div class="aside-bloco"><span>Anuncie aqui</span></div>
-    </aside>
+  <!-- BARRA TOPO -->
+  <div class="barra-topo">
+    <a href="/">← Livraria Lobotomia</a>
+    <img class="barra-logo" src="/logo.png" alt="Livraria Lobotomia"/>
   </div>
-  <footer><span>© 2026 Livraria Lobotomia — Reflexão e Desconforto</span></footer>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__capa">
+      <img src="/sessentasegundos/capa-sessenta-segundos.png" alt="Capa do livro O Fim do Mundo em Sessenta Segundos"/>
+    </div>
+    <div class="hero__info">
+      <span class="hero__tag">Pré-venda — Lançamento 30/05</span>
+      <h1 class="hero__titulo">O Fim do Mundo em Sessenta Segundos</h1>
+      <p class="hero__autor">Por Bouquard Lobo</p>
+      <p class="hero__tagline">O apocalipse que Hollywood filmou é o segundo cenário mais assustador. O primeiro não tem vilão, não tem explosão — e já pode estar em curso.</p>
+      <div class="hero__preco">
+        <span class="hero__preco-atual">R$&nbsp;67</span>
+        <span class="hero__preco-original">R$&nbsp;87</span>
+        <span class="hero__preco-detalhe">pré-venda</span>
+      </div>
+      <a href="https://pay.hotmart.com/H105866919K?off=sm2q2v3p" class="btn-cta">Garantir minha cópia</a>
+      <p class="hero__lancamento">Entrega automática por e-mail em 30/05/2026 · PDF e EPUB</p>
+    </div>
+  </section>
+
+  <hr class="divisor"/>
+
+  <!-- SINOPSE -->
+  <section class="sinopse">
+    <p class="sinopse__titulo">Sobre o livro</p>
+    <p>Desde 1984, quando Skynet lançou os mísseis numa tela de cinema, a humanidade treinou seu medo no lugar errado. O cenário-padrão de fim do mundo — a máquina hostil, o dia D, o herói chegando no último segundo — tem boa trilha sonora e péssima precisão.</p>
+    <p>Sessenta Segundos é um guia de leitura sobre o cenário que ninguém comentou: não a IA que nos declara guerra, mas a economia política da IA que torna a nossa presença irrelevante. Capital alocado em escala incontrolável. Governança que não acompanhou o ritmo. Externalidades que ninguém foi obrigado a internalizar.</p>
+    <p>O humano permanece vivo e o mundo funcionando — só que sem precisar de nós. É o fim do mundo impróprio: mais silencioso, mais provável, e já em curso.</p>
+    <div class="sinopse__citacoes">
+      <p>Para quem leu Bostrom, Jiang Xueqin, Zuboff. Até Black Mirror.</p>
+    </div>
+  </section>
+
+  <hr class="divisor"/>
+
+  <!-- AUTOR -->
+  <section class="autor">
+    <p class="autor__titulo">Sobre o autor</p>
+    <p class="autor__bio">Bouquard Lobo escreve ensaios sobre ideias incômodas em tempos confortáveis. Este é o primeiro título publicado pela Livraria Lobotomia sob esse nome.</p>
+  </section>
+
+  <hr class="divisor"/>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <p class="faq__titulo">Perguntas frequentes</p>
+    <div class="faq__item">
+      <p class="faq__pergunta">Quando recebo o livro?</p>
+      <p class="faq__resposta">Automaticamente no e-mail cadastrado em 30/05/2026.</p>
+    </div>
+    <div class="faq__item">
+      <p class="faq__pergunta">Em que formato?</p>
+      <p class="faq__resposta">PDF e EPUB.</p>
+    </div>
+    <div class="faq__item">
+      <p class="faq__pergunta">E se eu não gostar?</p>
+      <p class="faq__resposta">Reembolso integral em 7 dias, sem perguntas — política Hotmart.</p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <div class="cta-final">
+    <h2 class="cta-final__titulo">Garantir com 23% OFF</h2>
+    <p class="cta-final__sub">Pré-venda encerra em 30/05. Após o lançamento, R$&nbsp;87.</p>
+    <div class="cta-final__btns">
+      <a href="https://pay.hotmart.com/H105866919K?off=sm2q2v3p" class="btn-cta">Comprar agora — R$&nbsp;67</a>
+      <a href="https://wa.me/5511947655783?text=Ol%C3%A1%2C+tenho+interesse+no+livro+O+Fim+do+Mundo+em+Sessenta+Segundos" class="btn-cta-secundario">Falar pelo WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img class="footer__logo" src="/logo.png" alt="Livraria Lobotomia"/>
+    <p class="footer__copy">© 2026 Livraria Lobotomia — Reflexão e Desconforto</p>
+  </footer>
+
   <script>
     function toggleMenu(){const o=document.getElementById('menuMobile');o.style.overflow=o.classList.contains('aberto')?'hidden':'';}
     function fecharMenu(){document.getElementById('menuMobile').classList.remove('aberto');}
@@ -242,5 +219,6 @@
     setTimeout(function(){t("engaged_session",{engagement_time_msec:30000});f("ViewContent",{content_name:"Sessenta Segundos",content_ids:["sessenta_segundos"]});},30000);
   })();
   </script>
+
 </body>
 </html>
