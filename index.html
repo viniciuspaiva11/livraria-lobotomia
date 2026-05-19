@@ -220,6 +220,20 @@
     .voltar-home{padding:16px 0 8px;}
     .btn-voltar{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--texto);text-decoration:none;border:0.5px solid var(--cinza-claro);padding:6px 14px;border-radius:2px;transition:color 0.2s,border-color 0.2s;}
     .btn-voltar:hover{color:var(--dourado);border-color:var(--dourado);}
+  
+    /* ── HERO EDITORIAL ── */
+    .hero-editorial{position:relative;width:100%;height:clamp(320px,28vw,400px);overflow:hidden;background:#f0ede6;display:flex;align-items:center;isolation:isolate;}
+    .hero-editorial::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(201,168,108,0.4);z-index:4;}
+    .hero-editorial::before{content:"LOBOTOMIA";position:absolute;left:4%;top:50%;transform:translateY(-50%);font-family:"Barlow Condensed",sans-serif;font-size:clamp(92px,11vw,160px);font-weight:700;letter-spacing:0.14em;color:rgba(26,26,24,0.025);white-space:nowrap;pointer-events:none;z-index:0;}
+    .hero-video{position:absolute;right:0;top:50%;width:min(78%,920px);height:100%;transform:translateY(-50%);object-fit:cover;object-position:center right;mix-blend-mode:multiply;z-index:1;}
+    .hero-copy{position:relative;z-index:3;margin-left:clamp(42px,6vw,88px);max-width:430px;transform:translateY(-2px);}
+    .hero-kicker{font-family:"Barlow Condensed",sans-serif;font-size:11px;line-height:1;font-weight:500;text-transform:uppercase;letter-spacing:6px;color:#888780;margin-bottom:18px;}
+    .hero-title{margin:0;font-family:"Playfair Display",serif;font-style:italic;font-weight:900;color:#1a1a18;letter-spacing:-0.04em;line-height:0.9;}
+    .hero-title span:first-child{display:block;font-size:clamp(44px,4.4vw,52px);}
+    .hero-title span:last-child{display:block;font-size:clamp(32px,3.3vw,38px);margin-left:34px;margin-top:6px;}
+    .hero-separator{width:32px;height:1px;background:#c9a86c;margin:22px 0 14px;}
+    .hero-description{margin:0;max-width:290px;font-family:"DM Sans",sans-serif;font-size:13px;line-height:1.55;font-weight:300;color:#888780;}
+
   </style>
 </head>
 <body>
@@ -241,7 +255,6 @@
     <a href="mailto:contato@livrarialobotomia.com.br"><svg viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
   </div>
 </div>
-<div class="barra-topo"><div class="ads-topo"><span>Anuncie Aqui</span></div></div>
 <div class="layout">
   <nav class="sidebar">
     <div class="nav-logo"><img src="/logo.png" alt="Livraria Lobotomia"/></div>
@@ -261,12 +274,17 @@
     </div>
   </nav>
   <main class="conteudo">
-    <section class="hero" id="inicio">
-      <div class="hero-video-wrap"><video autoplay muted loop playsinline><source src="/animacao.mp4" type="video/mp4"/><img src="/lobotomia.png" alt="Livraria Lobotomia"/></video></div>
-      <div>
-        <div class="hero-slogan-row"><p class="hero-slogan">Reflexão e Desconforto</p></div>
-        <p class="hero-desc">Selo editorial de livros que incomodam e esclarecem.</p>
+    <section class="hero hero-editorial" id="inicio" aria-label="Livraria Lobotomia">
+      <div class="hero-copy">
+        <div class="hero-kicker">Livraria Lobotomia</div>
+        <h1 class="hero-title">
+          <span>Reflexão</span>
+          <span>e Desconforto</span>
+        </h1>
+        <div class="hero-separator" aria-hidden="true"></div>
+        <p class="hero-description">Selo editorial de livros que incomodam e esclarecem.</p>
       </div>
+      <video class="hero-video" src="/animacao.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
     </section>
     <div class="ads-mobile"><span>Portal Audiências — inteligência esportiva</span></div>
     <section class="secao" id="livros">
