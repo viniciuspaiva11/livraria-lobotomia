@@ -222,17 +222,17 @@
     .btn-voltar:hover{color:var(--dourado);border-color:var(--dourado);}
   
     /* ── HERO EDITORIAL ── */
-    .hero-editorial{position:relative;width:100%;height:clamp(320px,28vw,400px);overflow:hidden;background:#f0ede6;display:flex;align-items:center;isolation:isolate;}
-    .hero-editorial::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(201,168,108,0.4);z-index:4;}
-    .hero-editorial::before{content:"LOBOTOMIA";position:absolute;left:4%;top:50%;transform:translateY(-50%);font-family:"Barlow Condensed",sans-serif;font-size:clamp(92px,11vw,160px);font-weight:700;letter-spacing:0.14em;color:rgba(26,26,24,0.025);white-space:nowrap;pointer-events:none;z-index:0;}
-    .hero-video{position:absolute;right:0;top:50%;width:min(78%,920px);height:100%;transform:translateY(-50%);object-fit:cover;object-position:center right;mix-blend-mode:multiply;z-index:1;}
-    .hero-copy{position:relative;z-index:3;margin-left:clamp(42px,6vw,88px);max-width:430px;transform:translateY(-2px);}
-    .hero-kicker{font-family:"Barlow Condensed",sans-serif;font-size:11px;line-height:1;font-weight:500;text-transform:uppercase;letter-spacing:6px;color:#888780;margin-bottom:18px;}
+    .hero-editorial{position:relative;width:100%;min-height:340px;background:#f0ede6;display:flex;align-items:center;justify-content:space-between;padding:40px 60px 40px 48px;border-bottom:1px solid rgba(201,168,108,0.3);}
+    .hero-editorial::before{content:"LOBOTOMIA";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:"Barlow Condensed",sans-serif;font-size:clamp(80px,10vw,140px);font-weight:700;letter-spacing:0.14em;color:rgba(26,26,24,0.025);white-space:nowrap;pointer-events:none;z-index:0;}
+    .hero-copy{position:relative;z-index:2;flex:0 0 auto;max-width:380px;}
+    .hero-kicker{font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:6px;color:#888780;margin-bottom:18px;}
     .hero-title{margin:0;font-family:"Playfair Display",serif;font-style:italic;font-weight:900;color:#1a1a18;letter-spacing:-0.04em;line-height:0.9;}
-    .hero-title span:first-child{display:block;font-size:clamp(44px,4.4vw,52px);}
-    .hero-title span:last-child{display:block;font-size:clamp(32px,3.3vw,38px);margin-left:34px;margin-top:6px;}
+    .hero-title span:first-child{display:block;font-size:clamp(44px,4.4vw,54px);}
+    .hero-title span:last-child{display:block;font-size:clamp(32px,3.3vw,40px);margin-left:34px;margin-top:8px;}
     .hero-separator{width:32px;height:1px;background:#c9a86c;margin:22px 0 14px;}
     .hero-description{margin:0;max-width:290px;font-family:"DM Sans",sans-serif;font-size:13px;line-height:1.55;font-weight:300;color:#888780;}
+    .hero-video-wrap{position:relative;z-index:2;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+    .hero-video-wrap video{height:clamp(220px,22vw,300px);width:auto;display:block;}
 
   </style>
 </head>
@@ -284,7 +284,9 @@
         <div class="hero-separator" aria-hidden="true"></div>
         <p class="hero-description">Selo editorial de livros que incomodam e esclarecem.</p>
       </div>
-      <video class="hero-video" src="/animacao.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
+      <div class="hero-video-wrap">
+        <video src="/animacao.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
+      </div>
     </section>
     <div class="ads-mobile"><span>Portal Audiências — inteligência esportiva</span></div>
     <section class="secao" id="livros">
