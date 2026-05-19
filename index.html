@@ -9,11 +9,14 @@
   <meta name="description" content="Selo editorial de livros que incomodam e esclarecem."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500&family=Barlow+Condensed:wght@400;600&display=swap"
+  /><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700;6..96,900&display=swap" rel="stylesheet" rel="stylesheet"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF2H6X0RD1"></script>
   <script>
     window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){
+      .hero-desktop{display:none !important;}
+      .hero-mobile{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 0 28px;gap:24px;}dataLayer.push(arguments);}
     gtag('js',new Date());gtag('config','G-JF2H6X0RD1');
   </script>
   <script>
@@ -220,6 +223,23 @@
     .voltar-home{padding:16px 0 8px;}
     .btn-voltar{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--texto);text-decoration:none;border:0.5px solid var(--cinza-claro);padding:6px 14px;border-radius:2px;transition:color 0.2s,border-color 0.2s;}
     .btn-voltar:hover{color:var(--dourado);border-color:var(--dourado);}
+  
+    /* ── HERO DESKTOP ── */
+    .hero-desktop{display:flex;align-items:center;width:100%;height:340px;background:var(--bg);border-bottom:1px solid rgba(201,168,108,.4);}
+    .hero-mobile{display:none;}
+    .hero-left-copy{flex:0 0 auto;width:190px;margin-left:36px;z-index:2;}
+    .hero-kicker-sm{font-family:"Barlow Condensed",sans-serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:#aaa;margin-bottom:14px;}
+    .hero-slogan-sm{margin:0;font-family:"Playfair Display",serif;font-style:italic;font-weight:900;color:var(--preto);line-height:.9;}
+    .hero-slogan-sm span{display:block;}
+    .hero-slogan-sm span:nth-child(1){font-size:28px;}
+    .hero-slogan-sm span:nth-child(2){font-size:20px;margin-left:14px;opacity:.7;}
+    .hero-slogan-sm span:nth-child(3){font-size:24px;margin-left:8px;}
+    .hero-rule-sm{width:24px;height:1px;background:var(--dourado);margin:14px 0 10px;}
+    .hero-desc-sm{font-family:"DM Sans",sans-serif;font-size:11px;line-height:1.55;font-weight:300;color:#aaa;max-width:170px;}
+    .hero-nome-grande{flex:1;display:flex;align-items:center;justify-content:center;font-family:"Bodoni Moda",serif;font-size:80px;font-weight:900;line-height:.82;letter-spacing:.02em;color:var(--preto);text-transform:capitalize;padding:0 16px;}
+    .hero-video-direita{flex:0 0 auto;width:280px;height:280px;margin-right:24px;background:var(--bg);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .hero-video-direita video{width:100%;height:100%;object-fit:contain;background:var(--bg);}
+
   </style>
 </head>
 <body>
@@ -262,10 +282,32 @@
   </nav>
   <main class="conteudo">
     <section class="hero" id="inicio">
-      <div class="hero-video-wrap"><video autoplay muted loop playsinline><source src="/animacao.mp4" type="video/mp4"/><img src="/lobotomia.png" alt="Livraria Lobotomia"/></video></div>
-      <div>
-        <div class="hero-slogan-row"><p class="hero-slogan">Reflexão e Desconforto</p></div>
-        <p class="hero-desc">Selo editorial de livros que incomodam e esclarecem.</p>
+      <!-- DESKTOP HERO -->
+      <div class="hero-desktop">
+        <div class="hero-left-copy">
+          <div class="hero-kicker-sm">Livraria Lobotomia</div>
+          <h2 class="hero-slogan-sm">
+            <span>Reflexão</span>
+            <span>e</span>
+            <span>Desconforto</span>
+          </h2>
+          <div class="hero-rule-sm"></div>
+          <p class="hero-desc-sm">Selo editorial de livros que incomodam e esclarecem.</p>
+        </div>
+        <div class="hero-nome-grande">
+          Livraria<br>Lobotomia
+        </div>
+        <div class="hero-video-direita">
+          <video src="/animacao.mp4" autoplay loop muted playsinline preload="auto"></video>
+        </div>
+      </div>
+      <!-- MOBILE HERO (original) -->
+      <div class="hero-mobile">
+        <div class="hero-video-wrap"><video autoplay muted loop playsinline><source src="/animacao.mp4" type="video/mp4"/><img src="/lobotomia.png" alt="Livraria Lobotomia"/></video></div>
+        <div>
+          <div class="hero-slogan-row"><p class="hero-slogan">Reflexão e Desconforto</p></div>
+          <p class="hero-desc">Selo editorial de livros que incomodam e esclarecem.</p>
+        </div>
       </div>
     </section>
     <div class="ads-mobile"><span>Portal Audiências — inteligência esportiva</span></div>
