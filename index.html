@@ -31,6 +31,7 @@
     html{font-size:18px;scroll-padding-top:160px;}
     body{background:var(--bg);color:var(--texto);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
     .barra-topo{display:none;width:100%;background:var(--bg);border-bottom:0.5px solid var(--cinza-claro);align-items:center;justify-content:center;padding:16px 0;position:sticky;top:0;z-index:100;}
+        .banner-portal-mobile{display:none;}
         .secao-contatos{display:none;}
     .ads-topo{width:728px;height:135px;border:1px dashed var(--cinza);display:flex;align-items:center;justify-content:center;background:rgba(136,135,128,0.04);}
     .ads-topo span{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:2px;color:var(--cinza);text-transform:uppercase;}
@@ -146,7 +147,8 @@
      Regras aqui SOBRESCREVEM desktop.
      Para desktop: usar @media(min-width:901px) FORA deste bloco.
      ==================================================== */
-    @media(max-width:900px){
+    @media(max-width:90
+        .banner-portal-mobile{display:block;margin:0 0 24px;width:100%;}0px){
         .hero-banner-img{display:none;}
       .parc-btn,.parc-nav-btn,.parc-nav{display:none!important;}
       .livros-grid--carrossel .livro-card--destaque{grid-column:auto;width:auto;}
@@ -274,6 +276,7 @@
       </div>
     </section>
     <div class="ads-mobile"><span>Portal Audiências — inteligência esportiva</span></div>
+        <div class="banner-portal-mobile"><a href="https://audiencias.com.br" target="_blank"><img src="logotipo_portal_principal.jpeg" alt="Portal Audiencias" style="width:100%;display:block;border-radius:4px;"/></a></div>
     <section class="secao" id="livros">
       <div class="secao-header"><h2 class="secao-titulo">Catálogo Autoral</h2><div class="secao-linha"></div></div>
       <p class="carrossel-hint">Deslize para ver todos →</p>
