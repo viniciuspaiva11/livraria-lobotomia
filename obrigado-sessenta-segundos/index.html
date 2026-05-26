@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obrigado — O Fim do Mundo em Sessenta Segundos</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF2H6X0RD1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JF2H6X0RD1');
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1834320934116107');
+    fbq('track', 'PageView');
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:#0d0d0d;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:32px;}
+    .card{background:#1a1a18;border:0.5px solid #333;border-radius:8px;padding:48px 40px;max-width:480px;width:100%;text-align:center;}
+    .emoji{font-size:3rem;margin-bottom:16px;}
+    h1{font-family:'Playfair Display',serif;font-size:1.8rem;color:#f0ede6;margin-bottom:12px;}
+    p{color:#aaa;font-size:1rem;line-height:1.6;margin-bottom:24px;}
+    a{display:inline-block;background:#C9A86C;color:#1a1a18;padding:12px 28px;border-radius:4px;text-decoration:none;font-size:0.9rem;letter-spacing:1px;font-weight:700;}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">⏱️</div>
+    <h1>Compra confirmada!</h1>
+    <p>Seu acesso ao <strong style="color:#f0ede6">O Fim do Mundo em Sessenta Segundos</strong> está a caminho. Verifique seu e-mail para receber o link de download.</p>
+    <a href="https://livrarialobotomia.com.br">Voltar à Livraria</a>
+  </div>
+  <script>
+    (function(){
+      var params = new URLSearchParams(window.location.search);
+      var valor = parseFloat(params.get('valor')) || 67;
+      var pedido = params.get('pedido') || params.get('transaction_id') || '';
+      gtag('event', 'purchase', {transaction_id: pedido, value: valor, currency: 'BRL', items: [{item_name: 'Sessenta Segundos', item_id: 'sessenta-segundos', price: valor, quantity: 1}]});
+      fbq('track', 'Purchase', {value: valor, currency: 'BRL', content_name: 'Sessenta Segundos', content_ids: ['sessenta-segundos'], content_type: 'product'});
+    })();
+  </script>
+</body>
+</html>
