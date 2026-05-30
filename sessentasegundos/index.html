@@ -7,7 +7,7 @@
   <meta name="description" content="Um guia de leitura sobre o cenário que ninguém comentou. Por Bouquard Lobo. De R$67 por R$47."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,400;1,400&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF2H6X0RD1"></script>
   <script>
     window.dataLayer=window.dataLayer||[];
@@ -39,8 +39,9 @@
     html{font-size:16px;scroll-behavior:smooth;}
     body{background:var(--preto);color:var(--branco);font-family:'Inter Tight',Helvetica,Arial,sans-serif;line-height:1.6;}
 
-    /* VOLTAR — só mobile */
-    .voltar-ss{display:none;}
+    /* VOLTAR — desktop e mobile */
+    .voltar-ss{display:inline-block;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;text-decoration:none;background:#C9A86C;border:none;border-radius:0;margin:16px 0 0 20px;transition:opacity 0.2s;}
+    .voltar-ss:hover{opacity:0.85;}
 
     /* BARRA TOPO */
     .barra-topo{background:var(--grafite);border-bottom:1px solid var(--borda);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;}
@@ -105,7 +106,7 @@
     /* MOBILE */
     @media(max-width:900px){
       .barra-topo{display:none;}
-      .voltar-ss{display:inline-block;padding:8px 16px;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#000;text-decoration:none;background:var(--laranja);margin:16px 0 0 20px;}
+      .voltar-ss{display:inline-block;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;text-decoration:none;background:#C9A86C;border:none;border-radius:0;margin:16px 0 0 20px;transition:opacity 0.2s;}
       .hero{grid-template-columns:1fr;gap:40px;padding:40px 20px;}
       .hero__capa img{max-width:260px;margin:0 auto;}
       .hero__titulo{font-size:1.8rem;}
